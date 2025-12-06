@@ -1,0 +1,88 @@
+.imageN {
+    color: black;
+    height: 100%;
+    width: 400px;
+    background-color: pink;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /*
+    h-[100%] w-[400px] bg-purple-100*/
+}
+.imageN img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.imageN:hover img{
+    transform: scale(1.05);
+    filter: blur(3px);
+}
+
+.contentA{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    display: flex;;
+    align-items: flex-start;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: flex-end;
+    bottom: 10px;
+    left: 20px;
+    opacity: 1; 
+    transition: opacity 0.2s ease-in-out;
+}
+.contentA h1{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.contentA p{
+    font-size: 12px;
+    align-items: flex-end;
+    letter-spacing: 2px;
+}
+
+.imageN:hover .contentA {
+    opacity: 0;
+}
+
+.imageN::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  
+  /* REFINED SHADOW FOR BOTTOM-ONLY EFFECT */
+  /* box-shadow: inset [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+  box-shadow: inset 0 -120px 90px -90px rgba(0, 0, 0, 0.9); 
+  /* ^offset-x  ^offset-y  ^blur      ^spread     ^color   */
+}
+.content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 40;
+}
+
+.content:hover{
+    opacity: 1;
+    font-size: 24px;
+}
