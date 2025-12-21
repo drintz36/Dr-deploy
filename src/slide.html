@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Duration Slidescroll</title>
+    <style>
+        :root {
+            --w: 100%;
+            --r: 16/9;
+            --p: #3b82f6;
+            --t: 0.8s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #000;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            color: #fff;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .slider-container:focus-visible {
+            outline: 3px solid var(--p);
+            outline-offset: -4px;
+        }
+
+        .slides-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity var(--t) ease-in-out;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay Content */
+        .slide-overlay {
+            position: absolute;
+            z-index: 20;
+            top: 35%;
+            left: 10%;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .slide-overlay h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .slide-overlay p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .text {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .text-g1 {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s, color 0.2s;
+            min-width: 12rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .text-g1:hover {
+            background: white;
+            color: black;
+        }
+
+        .line-container {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 30;
+            width: 90%;
+            max-width: 1400px;
+            align-items: flex-end;
+        }
+
+        .text-t {
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            display: flex;
+            flex-flow: column-reverse;
+            opacity: .5;
+            transition: .3s;
+        }
+
+        .text-t:hover,
+        .text-t.active {
+            opacity: 1;
+        }
+
+        .text-tab-lab {
+            font-size: .875rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            text-shadow: 0 1px 3px #000;
+            text-align: left;
+            padding-left: 2px;
+        }
+
+        .text-tab-pro-bg {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .text-tab-pro-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 0;
+            background-color: #fff;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .text-t.active .text-tab-pro-fill {
+            background-color: #3b82f6;
+        }
+
+        @keyframes pro {
+            to {
+                width: 100%;
+            }
+        }
+
+        .slider-container.paused .text-tab-pro-fill {
+            animation-play-state: paused !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container" id="slider" tabindex="0">
+        <div class="slides-track" id="track">
+            <div class="slide" data-duration="10" data-title="Kung Fu Panda 4">
+                <video src="/img/p2.mp4" autoplay loop muted playsinline></video>
+                <div class="slide-overlay">
+                    <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of Peace!</p>
+                    <h2>Kung Fu Panda 4</h2>
+                    <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.</p>
+                    <div class="text">
+                        <button class="text-g1">OFFICIAL SITE</button>
+                        <button class="text-g1">WATCH VIDEO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
+                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
+                <div class="slide-overlay">
+                    <p>Experience the legend.</p>
+                    <h2>Kung Fu Panda 4</h2>
+                    <p>Watch the exclusive clip now.</p>
+                    <div class="text">
+                        <button class="text-g1">OFFICIAL SITE</button>
+                        <button class="text-g1">WATCH VIDEO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-duration="10" data-title="Kung Fu Panda 4">
+                <video src="/img/p2.mp4" autoplay loop muted playsinline></video>
+                <div class="slide-overlay">
+                    <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of Peace!</p>
+                    <h2>Kung Fu Panda 4</h2>
+                    <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.</p>
+                    <div class="text">
+                        <button class="text-g1">OFFICIAL SITE</button>
+                        <button class="text-g1">WATCH VIDEO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
+                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
+                <div class="slide-overlay">
+                    <p>Experience the legend.</p>
+                    <h2>Kung Fu Panda 4</h2>
+                    <p>Watch the exclusive clip now.</p>
+                    <div class="text">
+                        <button class="text-g1">OFFICIAL SITE</button>
+                        <button class="text-g1">WATCH VIDEO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
+                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
+                <div class="slide-overlay">
+                    <p>Experience the legend.</p>
+                    <h2>Kung Fu Panda 4</h2>
+                    <p>Watch the exclusive clip now.</p>
+                    <div class="text">
+                        <button class="text-g1">OFFICIAL SITE</button>
+                        <button class="text-g1">WATCH VIDEO</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="line-container" id="line"></div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const line = document.getElementById('line');
+        const slides = document.querySelectorAll('.slide');
+        let current = 0, startX = 0;
+        slides.forEach((s, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'text-t';
+            btn.style.flexGrow = s.dataset.duration || 6;
+            btn.innerHTML = `<div class="text-tab-lab">${s.dataset.title}</div><div class="text-tab-pro-bg"><div class="text-tab-pro-fill"></div></div>`;
+            btn.onclick = () => activate(i);
+            btn.querySelector('.text-tab-pro-fill').addEventListener('animationend', () => i === current && next());
+            line.appendChild(btn);
+        });
+        function activate(idx) {
+            current = idx;
+            slides.forEach((s, i) => {
+                s.classList.toggle('active', i === current);
+                const vid = s.querySelector('video');
+                if (vid) {
+                    if (i === current) {
+                        vid.currentTime = 0;
+                        vid.play().catch(() => { });
+                    } else {
+                        vid.pause();
+                    }
+                }
+            });
+            Array.from(line.children).forEach((tab, i) => {
+                tab.classList.toggle('active', i === current);
+                const fill = tab.querySelector('.text-tab-pro-fill');
+                fill.style.animation = 'none';
+                fill.style.width = '0%';
+                if (i < current) {
+                    fill.style.width = '100%';
+                } else if (i === current) {
+                    void fill.offsetWidth;
+                    fill.style.animation = `pro ${slides[current].dataset.duration || 6}s linear forwards`;
+                }
+            });
+        }
+
+        const next = () => activate((current + 1) % slides.length);
+        const prev = () => activate((current - 1 + slides.length) % slides.length);
+
+        slider.addEventListener('keydown', e => e.key === 'ArrowRight' ? next() : e.key === 'ArrowLeft' && prev());
+
+        const pause = () => slider.classList.add('paused');
+        const resume = () => slider.classList.remove('paused');
+
+        ['mousedown', 'touchstart'].forEach(evt => slider.addEventListener(evt, e => {
+            startX = (e.touches ? e.touches[0] : e).clientX;
+            pause();
+        }));
+
+        ['mouseup', 'touchend'].forEach(evt => slider.addEventListener(evt, e => {
+            resume();
+            const clientX = (e.changedTouches ? e.changedTouches[0] : e).clientX;
+            if (clientX !== undefined) {
+                const diff = clientX - startX;
+                if (Math.abs(diff) > 50) diff < 0 ? next() : prev();
+            }
+        }));
+        slider.addEventListener('mouseleave', resume);
+        setTimeout(() => activate(0), 50);
+    </script>
+</body>
+
+</html>
