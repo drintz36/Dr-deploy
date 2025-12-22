@@ -1,0 +1,254 @@
+:root {
+    --w: 100%;
+    --r: 16/9;
+    --p: #3b82f6;
+    --t: 0.8s;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-container:focus-visible {
+    outline: 3px solid var(--p);
+    outline-offset: -4px;
+}
+
+.slides-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--t) ease-in-out;
+    z-index: 1;
+    user-select: none;
+    color: white;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay Content */
+.slide-overlay {
+    position: absolute;
+    z-index: 20;
+    top: 35%;
+    left: 10%;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.slide-overlay h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.slide-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.text {
+    display: flex;
+    gap: 1rem;
+}
+
+.text-g1 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.4s ease-in-out;
+    min-width: 12rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.text-g1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: left 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.text-g1:hover::before {
+    left: 0;
+}
+
+.text-g1:hover {
+    color: black;
+}
+
+.line-container {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 30;
+    width: 90%;
+    max-width: 1400px;
+    align-items: flex-end;
+}
+
+.text-t {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-flow: column-reverse;
+    opacity: .5;
+    transition: .3s;
+}
+
+.text-t:hover,
+.text-t.active {
+    opacity: 1;
+}
+
+.text-tab-lab {
+    font-size: .875rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-shadow: 0 1px 3px #000;
+    text-align: left;
+    padding-left: 2px;
+}
+
+.text-tab-pro-bg {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.text-tab-pro-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background-color: #fff;
+    height: 100%;
+    z-index: 2;
+}
+
+.text-t.active .text-tab-pro-fill {
+    background-color: #3b82f6;
+}
+
+@keyframes pro {
+    to {
+        width: 100%;
+    }
+}
+
+.slider-container.paused .text-tab-pro-fill {
+    animation-play-state: paused !important;
+}
+
+/* Search Bar Animation */
+.search-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-bottom: 2px;
+}
+
+.search-container.active {
+    border-bottom: 2px solid #000;
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.search-container.active .search-input {
+    width: 250px;
+    opacity: 1;
+    padding: 0 10px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 18px;
+    color: #000;
+}
+
+/* Smooth shifting for all navigation items */
+.nav-collapsible>* {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}

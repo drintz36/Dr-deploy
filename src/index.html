@@ -5,46 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../dist/output.css">
-    <link rel="stylesheet" href="../src/style.css">
-    <link rel="stylesheet" href="../src/scroll.css">
-    <link rel="stylesheet" href="../src/footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slide_head.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <title>DreamWorks</title>
 </head>
 
 <body class="grid grid-rows-[auto_1fr_auto]  min-h-[100vh]">
 
-    <div class="header flex flex-col text-white p-0 text-center w-auto h-[1090px] z-5 ">
+    <div class="header flex flex-col text-white p-0 text-center w-auto">
         <div class="nav bg-white w-full h-[90px] flex flex-row  justify-center gap-[20rem] z-50 fixed shadow-lg">
-            <div class="logo  w-[150px] h-auto mr-[3rem] justify-center items-center flex">
-                <img src="/img/logo.png" class="h-[60px] w-[100px] " alt="">
+            <div class="logo w-[150px] h-auto mr-[9rem] mt-[10px] justify-center items-center flex z-[110]">
+                <a href="/src/index.html" target="_blank" aria-label="x-block">
+                    <img src="/img/logo.png" class="h-[70px] w-[120px] " alt="">
+                </a>
             </div>
-            <div class="social w-[930px] h-auto p-0 justify-center flex flex-wrap">
-                <ul class="soc  h-auto w-[300px] p-0 flex  ">
+            <div class="nav-collapsible flex flex-row items-center p-0  justify-center">
+                <ul class="soc flex flex-row items-center transition-all mr-[8rem] duration-400 z-[110]">
                     <li class="h-auto w-[60px] flex justify-center items-center text-black p-2">
                         <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
                             <img src="/img/Twitter X Logo PNG.png" alt="">
                         </a>
                     </li>
-
                     <li class="h-auto w-[60px] flex justify-center items-center text-black p-3.5">
                         <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
                             <img src="/img/Facebook Logo Icon Vector & Transparent PNG.png" alt="">
                         </a>
                     </li>
-
                     <li class="h-auto w-[60px] flex justify-center items-center text-black p-1.5">
                         <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
                             <img src="/img/youtube.png" alt="">
                         </a>
                     </li>
-
-                    <li class="h-auto w-[60px]  flex justify-center items-center text-black p-3">
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-3">
                         <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
                             <img src="/img/Instragram.png" alt="">
                         </a>
                     </li>
-
                     <li class="h-auto w-[60px] flex justify-center items-center text-black">
                         <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
                             <img src="/img/TikTok.png" alt="">
@@ -52,31 +52,361 @@
                     </li>
                 </ul>
 
-                <ul class="soc h-auto w-[400px]  pl-8 flex flex-row justify-center items-center   gap-[1rem]">
+                <div class="search-wrapper flex items-center shrink-0 z-[110]">
+                    <div class="search-container flex items-center flex-row-reverse">
+                        <button class="search-btn logo-link cursor-pointer focus:outline-none" id="searchBtn">
+                            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </button>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    </div>
+                </div>
 
-                    <li class="h-auto w-[60px]  flex justify-center items-center text-black p-2">
-                        <a href="#" class="logo-link">
+                <ul class="nav-links flex flex-row items-center gap-[1rem] pl-8">
+                    <li
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#"
+                            class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">MOVIE</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-10  ">
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Wild Robot</p>
+                                            </div>
+                                        </div>
 
-                            <div class="logo-icon"></div>
-                            <span class="search-icon">🔍</span>
-                        </a>
-                    </li>
-                    <li class="h-auto w-[60px] mr-8 flex justify-center items-center text-black p-3 text-xs font-bold ">
-                        MOVIE
-                    </li>
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Abominable">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-1 text-xs font-bold">
-                        TV
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
                     </li>
 
                     <li
-                        class="h-auto w-[60px]   pl-14 ml- flex justify-center items-center text-black p-3 text-xs font-bold ">
-                        EXPLORE
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">TV</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-32  ">
+
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">NOW STREAMING</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/spirit-untamed-poster-1.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Spirit Untamed">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Spirit Untamed</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/croods-2-key-art-v3.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Croods 2">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Croods 2</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-2-keyart2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys 2</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
                     </li>
 
+                    <li
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#"
+                            class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">EXPLORE</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-10  ">
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Wild Robot</p>
+                                            </div>
+                                        </div>
 
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Abominable">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-[310px] w-fit flex flex-col justify-center items-start gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
                 </ul>
-                <!--
+            </div>
+            <!--
                <div class="clipped-trapezoid 
                     bg-white 
                     text-[#1a3a60] 
@@ -92,55 +422,96 @@
                         SUBSCRIBE TO THE NEWSLETTER
                 </div>
             -->
-            </div>
-
-        </div>
-
-        <div class="slide  w-auto h-[1090px]">
-            <div class="carousel-container overflow-x-scroll snap-x snap-mandatory flex-row flex w-full">
-                
-                <div class="slide flex-shrink-0 w-full h-[1090px] snap-start bg-red-400 flex flex-col relative">
-                    <video class="h-[1090px] w-full object-cover z-5" src="/img/p2.mp4" autoplay loop muted playsinline>
-
-                    </video>
-                    <div class="absolute **z-20** w-[600px] top-[30rem] flex flex-col left-[10rem] p-0  text-white ">
-                        <p class="text-left w-[330px]">Join Po on his epic journey to become the Dragon Warrior
-                            and save the Valley of Peace!
-                        </p>
-                        <h2 class="text-6xl font-bold mb-4 text-left">Kung Fu Panda </h2>
-                        <p class="text-left w-[330px] mb-4 ">Join Po on his epic journey to become </p>
-                        <div class="flex gap-6">
-                            <button class="text-left border border-white py-3 px-8 w-[11.2rem]">OFFICIAL SITE</button>
-                            <button class="text-left border border-white py-3 px-8 w-[11.2rem]">WATCH VIDEO</button>
-                        </div>
-
-                    </div>
-                </div>
-                
-                <div class="slide flex-shrink-0 w-full h-[1090px] snap-start bg-red-400 flex flex-col relative">
-                    <video class="h-[1090px] w-full object-cover z-5" src="/img/p2.mp4" autoplay loop muted playsinline>
-
-                    </video>
-                    <div class="absolute **z-20** w-[600px] top-[30rem] flex flex-col left-[10rem] p-0  text-white ">
-                        <p class="text-left w-[330px]">Join Po on his epic journey to become the Dragon Warrior
-                            and save the Valley of Peace!
-                        </p>
-                        <h2 class="text-6xl font-bold mb-4 text-left">Kung Fu Panda </h2>
-                        <p class="text-left w-[330px] mb-4 ">Join Po on his epic journey to become </p>
-                        <div class="flex gap-6">
-                            <button class="text-left border border-white py-3 px-8 w-[11.2rem]">OFFICIAL SITE</button>
-                            <button class="text-left border border-white py-3 px-8 w-[11.2rem]">WATCH VIDEO</button>
-                        </div>
-
-                    </div>
-                </div>
-            
-            </div>
         </div>
 
     </div>
 
-    <div class="main bg-white text-white  text-center z-25 flex flex-col h-auto w-100% justify-center items-center">
+    <div class="slide-section w-auto h-[1090px]">
+        <div class="slider-container !h-full" id="slider" tabindex="0">
+            <div class="slides-track" id="track">
+                <div class="slide" data-duration="8" data-title="Kung Fu Panda 4">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/p2.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Kung Fu Panda 4</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Minion">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/minion.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Minion</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Abominable">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/abominable.mp4" autoplay loop
+                        muted playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Abominable</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Bad Guy">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/badguy.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Bad Guy</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Boss Baby">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/boss_baby.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Boss Baby</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-container" id="line"></div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="main">
         <div class="card-a w-[1600px]  h-[900px] flex flex-col justify-center relative items-center">
             <p class="uppercase font-black tracking-[5px] text-blue-950 text-[60px] absolute top-8">MOVIE</p>
             <div class="gallery-wrap ">
@@ -444,8 +815,9 @@
 
     </div>
 
-    <script src="/src/slide.js"></script>
-
+    <script src="javascript/slide.js"></script>
+    <script src="javascript/slide_head.js"></script>
+    <script src="javascript/hover-feature.js"></script>
     <!-- section & img -->
     <div class="section-contact">
         <div class="contact-form">

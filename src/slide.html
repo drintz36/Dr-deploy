@@ -4,338 +4,943 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable Duration Slidescroll</title>
-    <style>
-        :root {
-            --w: 100%;
-            --r: 16/9;
-            --p: #3b82f6;
-            --t: 0.8s;
-        }
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slide_head.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: #000;
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0;
-            color: #fff;
-        }
-
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .slider-container:focus-visible {
-            outline: 3px solid var(--p);
-            outline-offset: -4px;
-        }
-
-        .slides-track {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity var(--t) ease-in-out;
-            z-index: 1;
-            user-select: none;
-        }
-
-        .slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Overlay Content */
-        .slide-overlay {
-            position: absolute;
-            z-index: 20;
-            top: 35%;
-            left: 10%;
-            width: 600px;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .slide-overlay h2 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .slide-overlay p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            max-width: 400px;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        .text {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .text-g1 {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 1rem 2.5rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.2s, color 0.2s;
-            min-width: 12rem;
-            text-align: center;
-            letter-spacing: 0.05em;
-        }
-
-        .text-g1:hover {
-            background: white;
-            color: black;
-        }
-
-        .line-container {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 30;
-            width: 90%;
-            max-width: 1400px;
-            align-items: flex-end;
-        }
-
-        .text-t {
-            background: none;
-            border: 0;
-            cursor: pointer;
-            padding: 0;
-            position: relative;
-            display: flex;
-            flex-flow: column-reverse;
-            opacity: .5;
-            transition: .3s;
-        }
-
-        .text-t:hover,
-        .text-t.active {
-            opacity: 1;
-        }
-
-        .text-tab-lab {
-            font-size: .875rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-            text-shadow: 0 1px 3px #000;
-            text-align: left;
-            padding-left: 2px;
-        }
-
-        .text-tab-pro-bg {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-            position: relative;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .text-tab-pro-fill {
-            position: absolute;
-            inset: 0 auto 0 0;
-            width: 0;
-            background-color: #fff;
-            height: 100%;
-            z-index: 2;
-        }
-
-        .text-t.active .text-tab-pro-fill {
-            background-color: #3b82f6;
-        }
-
-        @keyframes pro {
-            to {
-                width: 100%;
-            }
-        }
-
-        .slider-container.paused .text-tab-pro-fill {
-            animation-play-state: paused !important;
-        }
-    </style>
+    <title>DreamWorks</title>
 </head>
 
-<body>
-    <div class="slider-container" id="slider" tabindex="0">
-        <div class="slides-track" id="track">
-            <div class="slide" data-duration="10" data-title="Kung Fu Panda 4">
-                <video src="/img/p2.mp4" autoplay loop muted playsinline></video>
-                <div class="slide-overlay">
-                    <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of Peace!</p>
-                    <h2>Kung Fu Panda 4</h2>
-                    <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.</p>
-                    <div class="text">
-                        <button class="text-g1">OFFICIAL SITE</button>
-                        <button class="text-g1">WATCH VIDEO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
-                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
-                <div class="slide-overlay">
-                    <p>Experience the legend.</p>
-                    <h2>Kung Fu Panda 4</h2>
-                    <p>Watch the exclusive clip now.</p>
-                    <div class="text">
-                        <button class="text-g1">OFFICIAL SITE</button>
-                        <button class="text-g1">WATCH VIDEO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" data-duration="10" data-title="Kung Fu Panda 4">
-                <video src="/img/p2.mp4" autoplay loop muted playsinline></video>
-                <div class="slide-overlay">
-                    <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of Peace!</p>
-                    <h2>Kung Fu Panda 4</h2>
-                    <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.</p>
-                    <div class="text">
-                        <button class="text-g1">OFFICIAL SITE</button>
-                        <button class="text-g1">WATCH VIDEO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
-                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
-                <div class="slide-overlay">
-                    <p>Experience the legend.</p>
-                    <h2>Kung Fu Panda 4</h2>
-                    <p>Watch the exclusive clip now.</p>
-                    <div class="text">
-                        <button class="text-g1">OFFICIAL SITE</button>
-                        <button class="text-g1">WATCH VIDEO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" data-duration="8" data-title="Kung Fu Panda (Clip)">
-                <video src="/img/Kungfu4.mp4" autoplay loop muted playsinline></video>
-                <div class="slide-overlay">
-                    <p>Experience the legend.</p>
-                    <h2>Kung Fu Panda 4</h2>
-                    <p>Watch the exclusive clip now.</p>
-                    <div class="text">
-                        <button class="text-g1">OFFICIAL SITE</button>
-                        <button class="text-g1">WATCH VIDEO</button>
-                    </div>
-                </div>
-            </div>
+<body class="grid grid-rows-[auto_1fr_auto]  min-h-[100vh]">
 
+    <div class="header flex flex-col text-white p-0 text-center w-auto">
+        <div class="nav bg-white w-full h-[90px] flex flex-row  justify-center gap-[20rem] z-50 fixed shadow-lg">
+            <div class="logo w-[150px] h-auto mr-[9rem] mt-[10px] justify-center items-center flex z-[110]">
+                <a href="/src/index.html" target="_blank" aria-label="x-block">
+                    <img src="/img/logo.png" class="h-[70px] w-[120px] " alt="">
+                </a>
+            </div>
+            <div class="nav-collapsible flex flex-row items-center p-0  justify-center">
+                <ul class="soc flex flex-row items-center transition-all mr-[8rem] duration-400 z-[110]">
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-2">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Twitter X Logo PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-3.5">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Facebook Logo Icon Vector & Transparent PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-1.5">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/youtube.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black p-3">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Instragram.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[60px] flex justify-center items-center text-black">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/TikTok.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="search-wrapper flex items-center shrink-0 z-[110]">
+                    <div class="search-container flex items-center flex-row-reverse">
+                        <button class="search-btn logo-link cursor-pointer focus:outline-none" id="searchBtn">
+                            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </button>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    </div>
+                </div>
+
+                <ul class="nav-links flex flex-row items-center gap-[1rem] pl-8">
+                    <li
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#"
+                            class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">MOVIE</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-10  ">
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Wild Robot</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Abominable">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">TV</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-10  ">
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Wild Robot</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Abominable">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/croods-2-key-art-v3.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Croods 2">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li
+                        class="h-auto w-[60px] flex flex-col justify-center items-center text-black p-3 text-xs font-bold uppercase">
+                        <a href="#"
+                            class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">EXPLORE</a>
+                        <div
+                            class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[90px] left-0 h-[450px] hidden">
+                            <div class="bg-[#052c6f] h-[400px] w-full flex flex-row justify-center gap-10  ">
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Wild Robot">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Wild Robot</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Abominable">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-[310px] w-[356px] flex flex-col justify-center items-center gap-4 ">
+                                    <div class="w-full">
+                                        <h2 class="text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="The Bad Guys">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-[240px] w-[170px]">
+                                            <div class="relative h-[250px] w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg"
+                                                    class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]"
+                                                    alt="Puss in Boots">
+                                                <a href="#"
+                                                    class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1
+                                                        class="text-white text-[15px] font-bold uppercase tracking-wider">
+                                                        See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-[40px] w-[170px] pt-1">
+                                                <p
+                                                    class="text-left text-white text-[12px] font-semibold uppercase tracking-[0.2em] antialiased ">
+                                                    Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[70px] w-full flex flex-row justify-center 
+                            items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#"
+                                    class="text-white text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--
+               <div class="clipped-trapezoid 
+                    bg-white 
+                    text-[#1a3a60] 
+                        uppercase 
+                        font-bold 
+                        text-sm 
+                        px-12 
+                        py-4 
+                        w-fit /* Make the box fit the content width */
+                        ml-[28rem]
+                        mt-[30px]
+                        ">
+                        SUBSCRIBE TO THE NEWSLETTER
+                </div>
+            -->
         </div>
-        <div class="line-container" id="line"></div>
+
     </div>
 
-    <script>
-        const slider = document.getElementById('slider');
-        const line = document.getElementById('line');
-        const slides = document.querySelectorAll('.slide');
-        let current = 0, startX = 0;
-        slides.forEach((s, i) => {
-            const btn = document.createElement('button');
-            btn.className = 'text-t';
-            btn.style.flexGrow = s.dataset.duration || 6;
-            btn.innerHTML = `<div class="text-tab-lab">${s.dataset.title}</div><div class="text-tab-pro-bg"><div class="text-tab-pro-fill"></div></div>`;
-            btn.onclick = () => activate(i);
-            btn.querySelector('.text-tab-pro-fill').addEventListener('animationend', () => i === current && next());
-            line.appendChild(btn);
-        });
-        function activate(idx) {
-            current = idx;
-            slides.forEach((s, i) => {
-                s.classList.toggle('active', i === current);
-                const vid = s.querySelector('video');
-                if (vid) {
-                    if (i === current) {
-                        vid.currentTime = 0;
-                        vid.play().catch(() => { });
-                    } else {
-                        vid.pause();
-                    }
-                }
-            });
-            Array.from(line.children).forEach((tab, i) => {
-                tab.classList.toggle('active', i === current);
-                const fill = tab.querySelector('.text-tab-pro-fill');
-                fill.style.animation = 'none';
-                fill.style.width = '0%';
-                if (i < current) {
-                    fill.style.width = '100%';
-                } else if (i === current) {
-                    void fill.offsetWidth;
-                    fill.style.animation = `pro ${slides[current].dataset.duration || 6}s linear forwards`;
-                }
-            });
-        }
+    <div class="slide-section w-auto h-[1090px]">
+        <div class="slider-container !h-full" id="slider" tabindex="0">
+            <div class="slides-track" id="track">
+                <div class="slide" data-duration="8" data-title="Kung Fu Panda 4">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/p2.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Kung Fu Panda 4</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Minion">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/minion.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Minion</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Abominable">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/abominable.mp4" autoplay loop
+                        muted playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Abominable</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Bad Guy">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/badguy.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Bad Guy</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="8" data-title="Boss Baby">
+                    <video class="h-[1090px] w-full object-cover z-5" src="/img/video/boss_baby.mp4" autoplay loop muted
+                        playsinline></video>
+                    <div class="slide-overlay">
+                        <p>Join Po on his epic journey to become the Dragon Warrior and save the Valley of
+                            Peace!</p>
+                        <h2>Boss Baby</h2>
+                        <p>Join Po on his epic journey to become the spiritual leader of the Valley of Peace.
+                        </p>
+                        <div class="text">
+                            <button class="text-g1">OFFICIAL SITE</button>
+                            <button class="text-g1">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-container" id="line"></div>
+        </div>
+    </div>
 
-        const next = () => activate((current + 1) % slides.length);
-        const prev = () => activate((current - 1 + slides.length) % slides.length);
+    </div>
 
-        slider.addEventListener('keydown', e => e.key === 'ArrowRight' ? next() : e.key === 'ArrowLeft' && prev());
+    <div class="main">
+        <div class="card-a w-[1600px]  h-[900px] flex flex-col justify-center relative items-center">
+            <p class="uppercase font-black tracking-[5px] text-blue-950 text-[60px] absolute top-8">MOVIE</p>
+            <div class="gallery-wrap ">
 
-        const pause = () => slider.classList.add('paused');
-        const resume = () => slider.classList.remove('paused');
+                <button class="circle-btn left-btn">
+                    <span class="arrow">&lt;</span>
+                </button>
 
-        ['mousedown', 'touchstart'].forEach(evt => slider.addEventListener(evt, e => {
-            startX = (e.touches ? e.touches[0] : e).clientX;
-            pause();
-        }));
+                <div class="wrapper w-[1200px] h-[600px] absolute top-40 flex ">
 
-        ['mouseup', 'touchend'].forEach(evt => slider.addEventListener(evt, e => {
-            resume();
-            const clientX = (e.changedTouches ? e.changedTouches[0] : e).clientX;
-            if (clientX !== undefined) {
-                const diff = clientX - startX;
-                if (Math.abs(diff) > 50) diff < 0 ? next() : prev();
-            }
-        }));
-        slider.addEventListener('mouseleave', resume);
-        setTimeout(() => activate(0), 50);
-    </script>
+                    <div class="imageN ">
+                        <img src="/img/the-wild-robot-keyart4.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/the-bad-guys-2-keyart2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN ">
+                        <img src="/img/boss-baby-2-pc-keyart.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/spirit-untamed-poster-1.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/croods-2-key-art-v3.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN ">
+                        <img src="/img/abominable-keyart.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/the-bad-guys-2-keyart2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/twt-key-art-no-text.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <button class="circle-btn right-btn">
+                    <span class="arrow">&lt;</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="card-a w-[1600px] h-[900px] flex flex-col justify-center relative items-center">
+            <p class="uppercase font-black tracking-[5px] text-blue-950 text-[60px] absolute top-8">TELEVISION</p>
+            <div class="gallery-wrap ">
+
+                <button class="circle-btn left-btn">
+                    <span class="arrow">&lt;</span>
+                </button>
+
+                <div class="wrapper w-[1200px] h-[600px] absolute top-40 flex ">
+
+                    <div class="imageN ">
+                        <img src="/img/the-wild-robot-keyart4.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/the-bad-guys-2-keyart2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN ">
+                        <img src="/img/boss-baby-2-pc-keyart.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/spirit-untamed-poster-1.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/croods-2-key-art-v3.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN ">
+                        <img src="/img/abominable-keyart.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/the-bad-guys-2-keyart2.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="imageN">
+                        <img src="/img/twt-key-art-no-text.jpg" alt="">
+                        <div class="contentA">
+                            <h1>THE WILD ROBOT</h1>
+                            <p>AVAILABLE NOW ON DIGITAL</p>
+                            <p>4K UHD, BLU-RAY & DVD</p>
+                        </div>
+                        <a href="#">
+                            <div class="content">
+                                <h1>See More</h1>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <button class="circle-btn right-btn">
+                    <span class="arrow">&lt;</span>
+                </button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="javascript/slide.js"></script>
+    <script src="javascript/slide_head.js"></script>
+    <script src="javascript/hover-feature.js"></script>
+    <!-- section & img -->
+    <div class="section-contact">
+        <div class="contact-form">
+            <h2>STAY IN TOUCH</h2>
+            <p>
+                Register today for the DreamWorks Animation newsletter to receive
+                <br />all the latest information about our upcoming films and
+                projects.
+            </p>
+            <form class="form-intouch">
+                <h2>ENTER BIRTH DATE</h2>
+                <div class="input-day-month-year">
+                    <label class="day">
+                        <div class="label">MONTH</div>
+                        <input type="text" />
+                    </label>
+
+                    <label class="day">
+                        <div class="label">DAY</div>
+                        <input type="text" />
+                    </label>
+
+                    <label class="day">
+                        <div class="label">YEAR</div>
+                        <input type="text" />
+                    </label>
+                </div>
+            </form>
+            <!-- Button Form -->
+            <button class="contact-btn">NEXT</button>
+        </div>
+
+        <div class="contact-img">
+            <img src="/img/footer/contact-img.jpg" alt="" />
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <div class="logo-circle">
+                    <img src="/img/footer/image copy 7.png" alt="" />
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#home">HOME</a>
+                <a href="#movies">MOVIES</a>
+                <a href="#tv-shows">TV SHOWS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#careers">CAREERS</a>
+                <a href="#culture">CULTURE</a>
+                <a href="#classics">CLASSICS</a>
+            </nav>
+
+            <div class="social-section">
+                <div class="social-title">FOLLOW DREAMWORKS</div>
+                <div class="social-icons">
+                    <!-- twitter-icon -->
+                    <div class="social-icon x-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </div>
+
+                    <!-- facebook-icon -->
+                    <div class="social-icon fb-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </div>
+
+                    <!-- youtube-icon -->
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </div>
+
+                    <!-- Instragram-icon -->
+                    <div class="social-icon">
+                        <img src="/img/footer/[CITYPNG.COM]HD White Outline Round Instagram Logo Icon PNG - 2000x2000.png"
+                            alt="" />
+                    </div>
+                    <!-- tiktok-icon -->
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <span>&copy; 2025 DREAMWORKS ANIMATION ALL RIGHTS RESERVED.</span>
+                    <span>A DIVISION OF</span>
+                    <a href="#">NBCUNIVERSAL. </a>
+                    <a href="#">PRIVACY POLICY</a>
+                    <span>|</span>
+                    <a href="#">COOKIE NOTICE</a>
+                    <span>|</span>
+                    <a href="#">TERMS OF SERVICE</a>
+                    <span>|</span>
+                    <a href="#">YOUTUBE TERMS OF SERVICE</a>
+                    <span>|</span>
+                    <a href="#">GOOGLE PRIVACY POLICY</a>
+                </div>
+                <div class="language-selector">
+                    <div class="lang-btn">
+                        <img src="/img/footer/image copy 6.png" alt="" />
+                    </div>
+                    <div class="lang-btn">
+                        <img src="/img/footer/image copy 5.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
