@@ -1199,6 +1199,10 @@ video {
   .sm\:overflow-visible {
     overflow: visible;
   }
+
+  .sm\:text-\[10px\] {
+    font-size: 10px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1218,24 +1222,12 @@ video {
     margin-left: 5rem;
   }
 
-  .md\:mt-\[8px\] {
-    margin-top: 8px;
-  }
-
-  .md\:mr-\[10rem\] {
-    margin-right: 10rem;
-  }
-
-  .md\:mr-\[15rem\] {
-    margin-right: 15rem;
-  }
-
-  .md\:mr-\[18rem\] {
-    margin-right: 18rem;
-  }
-
   .md\:mr-\[20rem\] {
     margin-right: 20rem;
+  }
+
+  .md\:mt-\[8px\] {
+    margin-top: 8px;
   }
 
   .md\:block {
@@ -1270,8 +1262,8 @@ video {
     height: 75px;
   }
 
-  .md\:h-\[40rem\] {
-    height: 40rem;
+  .md\:h-\[100px\] {
+    height: 100px;
   }
 
   .md\:\!w-full {
@@ -1300,6 +1292,10 @@ video {
 
   .md\:w-\[600px\] {
     width: 600px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:items-center {
@@ -1346,6 +1342,11 @@ video {
     line-height: 2.25rem;
   }
 
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .md\:text-\[50px\] {
     font-size: 50px;
   }
@@ -1365,9 +1366,20 @@ video {
     line-height: 1.75rem;
   }
 
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+  .md\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .md\:text-\[15px\] {
+    font-size: 15px;
+  }
+
+  .md\:text-\[8px\] {
+    font-size: 8px;
+  }
+
+  .md\:text-\[10px\] {
+    font-size: 10px;
   }
 
   .md\:tracking-\[5px\] {
@@ -1400,8 +1412,8 @@ video {
     margin-left: -5rem;
   }
 
-  .lg\:ml-\[18rem\] {
-    margin-left: 18rem;
+  .lg\:ml-\[20rem\] {
+    margin-left: 20rem;
   }
 
   .lg\:ml-\[44rem\] {
@@ -1430,6 +1442,10 @@ video {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:\!hidden {
+    display: none !important;
   }
 
   .lg\:h-\[140px\] {
@@ -1482,10 +1498,6 @@ video {
 
   .lg\:h-auto {
     height: auto;
-  }
-
-  .lg\:h-\[40rem\] {
-    height: 40rem;
   }
 
   .lg\:w-1\/2 {
@@ -1669,16 +1681,24 @@ video {
     margin-left: 120px;
   }
 
+  .xl\:ml-\[8rem\] {
+    margin-left: 8rem;
+  }
+
+  .xl\:mr-\[12rem\] {
+    margin-right: 12rem;
+  }
+
   .xl\:mr-\[50px\] {
     margin-right: 50px;
   }
 
-  .xl\:mr-\[8rem\] {
-    margin-right: 8rem;
-  }
-
   .xl\:block {
     display: block;
+  }
+
+  .xl\:flex {
+    display: flex;
   }
 
   .xl\:h-\[1090px\] {
