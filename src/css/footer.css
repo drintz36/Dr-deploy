@@ -52,10 +52,8 @@
 }
 .day input {
   border-bottom: 1px solid #052c6f;
-  /* width: 140px; */
   outline: none;
   margin-right: 13px;
-  /* margin-left: 20px; */
   width: 170px;
 }
 

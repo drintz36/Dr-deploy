@@ -217,7 +217,7 @@ html, body {
   width: 100%;
   height: 100%;
   transition: 0.3s;
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-fit: cover; 
 }
 .imageN:hover img{
     transform: scale(1.05);

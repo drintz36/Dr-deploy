@@ -23,7 +23,7 @@
 .arrow {
   font-size: 28px;
   font-weight: 300;
-  color: #1662C5; /* blue color in your image */
+  color: #1662C5; 
 }
 
 .gallery-wrap {
@@ -33,17 +33,17 @@
   align-items: center;
 }
 
-/* Position first button (left arrow) */
+
 .gallery-wrap button:first-child {
   position: absolute;
   left: 150px;
   z-index: 45;
 }
 
-/* Position last button (right arrow) */
+
 .gallery-wrap button:last-child {
   position: absolute;
   right: 150px;
-  transform: rotate(180deg); /* makes arrow point right */
+  transform: rotate(180deg); 
   z-index: 45;
 }
