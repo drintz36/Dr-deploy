@@ -5,13 +5,39 @@
     --t: 0.8s;
 }
 .subscribe-clip {
-    /* Top corners are 0%, bottom corners are pulled in by 15% */
     clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
+#subscribeBtn {
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.8s ease-in-out;
+    z-index: 120;
+}
+.subscribe-hidden {
+    transform: translate(-50%, -100%) scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+}
+.subscribe-wrapper {
+    position: absolute;
+    left: 70%;
+    top: 90px;
+    transform: translateX(-50%);
+    overflow: hidden;
+    height: 100px;
+    z-index: 120;
+}
 
+#subscribeBtn {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(0); 
+}
+.drop-up {
+    transform: translateY(-100%) !important;
+}
 .slider-container {
     position: relative;
     width: 100%;
@@ -57,10 +83,10 @@
 .slide-overlay {
     position: absolute;
     z-index: 20;
-    top: 40%; /* Adjusted for better balance */
-    left: 8%;  /* Slightly more margin from the left */
+    top: 40%;
+    left: 8%;
     width: 100%;
-    max-width: 600px; /* Wider to accommodate the title */
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -161,18 +187,18 @@
 }
 
 .text-tab-lab {
-    font-size: 0.7rem;        /* Smaller font size */
+    font-size: 0.7rem;
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 6px;       /* Reduced space between text and line */
+    margin-bottom: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
     text-shadow: 0 1px 3px #000;
-    text-align: center;       /* Centers the title */
-    padding: 0 4px;           /* Prevents text from touching the edges */
+    text-align: center;
+    padding: 0 4px;
 }
 
 .text-tab-pro-bg {
@@ -311,4 +337,17 @@
 }
 .slide.active .slide-overlay .text-g1:nth-child(2) {
     animation-delay: 0.95s;
+}
+
+/*Style for menu toggle*/
+#menuToggle.active span {
+    background-color: #3b82f6;
+}
+
+#menuToggle.active .line-1 {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+#menuToggle.active .line-2 {
+    transform: translateY(-3.5px) rotate(-45deg);
 }
