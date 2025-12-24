@@ -1,0 +1,49 @@
+.gallery-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.circle-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  /* soft shadow like your image */
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.arrow {
+  font-size: 28px;
+  font-weight: 300;
+  color: #1662C5; 
+}
+
+.gallery-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.gallery-wrap button:first-child {
+  position: absolute;
+  left: 150px;
+  z-index: 45;
+}
+
+
+.gallery-wrap button:last-child {
+  position: absolute;
+  right: 150px;
+  transform: rotate(180deg); 
+  z-index: 45;
+}

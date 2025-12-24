@@ -1,0 +1,464 @@
+/* Prevent all horizontal overflow */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 0px;
+    text-align: center;
+    width: auto;
+    z-index: 50;
+    /* Increased to ensure it's above .main */
+    position: relative;
+    /* Established stacking context */
+}
+
+.header .nav {
+    z-index: 100;
+    /* Higher than header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main {
+    background-color: white;
+    text-align: center;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+}
+
+.imageN {
+    color: black;
+    height: 100%;
+    min-width: 400px;
+    background-color: pink;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /*
+    h-[100%] w-[400px] bg-purple-100*/
+}
+
+.imageN img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+}
+
+.imageN:hover img {
+    transform: scale(1.05);
+    filter: blur(3px);
+}
+
+.contentA {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: flex-end;
+    bottom: 10px;
+    left: 20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.contentA h1 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contentA p {
+    font-size: 12px;
+    align-items: flex-end;
+    letter-spacing: 2px;
+}
+
+.imageN:hover .contentA {
+    opacity: 0;
+}
+
+.imageN::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    /* REFINED SHADOW FOR BOTTOM-ONLY EFFECT */
+    /* box-shadow: inset [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+    box-shadow: inset 0 -120px 90px -90px rgba(0, 0, 0, 0.9);
+    /* ^offset-x  ^offset-y  ^blur      ^spread     ^color   */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 40;
+}
+
+.content:hover {
+    opacity: 1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+}
+
+.wrapper {
+    overflow-x: scroll;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: none
+}
+ @media (max-width: 1023px) {
+    .contact-img {
+        zoom: 0.85;
+        transform: scale(0.85);
+        transform-origin: 0 0;
+        -moz-transform: scale(0.85);
+        -moz-transform-origin: 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .section-contact {
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+ 
+    
+    .main {
+        display: flex;
+        justify-content: center;
+      
+        
+    }
+    .wrapper {
+        align-items: center;
+        zoom: 0.65;
+        transform: scale(0.85);
+        transform-origin: 0 0;
+        -moz-transform: scale(0.85);
+        -moz-transform-origin: 0 0;
+        
+    }
+    
+
+   
+    /* Limit to 3 visible images */
+    .main .wrapper {
+        margin-left: 15.5rem;
+        
+        
+    }
+ 
+    
+}
+
+
+.imageN {
+    color: black;
+    height: 100%;
+    width: 400px;
+    background-color: pink;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /*
+    h-[100%] w-[400px] bg-purple-100*/
+}
+.imageN img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  object-fit: cover; 
+}
+.imageN:hover img{
+    transform: scale(1.05);
+    filter: blur(3px);
+}
+
+.contentA{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    display: flex;;
+    align-items: flex-start;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: flex-end;
+    bottom: 10px;
+    left: 20px;
+    opacity: 1; 
+    transition: opacity 0.2s ease-in-out;
+}
+.contentA h1{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.contentA p{
+    font-size: 12px;
+    align-items: flex-end;
+    letter-spacing: 2px;
+}
+
+.imageN:hover .contentA {
+    opacity: 0;
+}
+
+.imageN::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  
+  /* REFINED SHADOW FOR BOTTOM-ONLY EFFECT */
+  /* box-shadow: inset [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+  box-shadow: inset 0 -120px 90px -90px rgba(0, 0, 0, 0.9); 
+  /* ^offset-x  ^offset-y  ^blur      ^spread     ^color   */
+}
+.content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 40;
+}
+
+.content:hover{
+    opacity: 1;
+    font-size: 24px;
+}
+
+/* ========================================
+   CAROUSEL SECTION STYLES (About DreamWorks)
+   ======================================== */
+
+.carousel-section {
+    background-color: #052c6f;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.carousel-section .carousel-container {
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+.carousel-section .carousel-header {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.carousel-section .carousel-header h1 {
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    font-weight: 900;
+    font-stretch: condensed;
+    letter-spacing: -0.02em;
+    font-size: 55px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.carousel-section .carousel-header a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.carousel-section .carousel-header a:hover {
+    opacity: 0.8;
+    color: #4169e1;
+}
+
+.carousel-section .carousel-nav {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-section .carousel-nav ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #045ebb;
+}
+
+.carousel-section .carousel-nav-btn {
+    background: none;
+    border: none;
+    color: #b6c0d5;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: -2px;
+}
+
+.carousel-section .carousel-nav-btn:hover {
+    opacity: 0.8;
+}
+
+.carousel-section .carousel-nav-btn.active {
+    border-bottom-color: #4d8ffe;
+    color: #4d8ffe;
+}
+
+.carousel-section .carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 650px;
+}
+
+.carousel-section .carousel-slider {
+    display: flex;
+    gap: 90px;
+    transition: transform 0.5s ease-out;
+    cursor: grab;
+}
+
+.carousel-section .carousel-slider:active {
+    cursor: grabbing;
+}
+
+.carousel-section .carousel-slide {
+    flex-shrink: 0;
+    width: 750px;
+}
+
+.carousel-section .carousel-slide figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.carousel-section .carousel-slide img {
+    width: 100%;
+    height: 445px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-section .carousel-slide .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.carousel-section .carousel-slide .carousel-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 40px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.carousel-section .carousel-slide footer {
+    margin-top: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.carousel-section .carousel-slide footer p {
+    font-family: "Century Gothic", "Avenir Next", Avenir, "Trebuchet MS", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #ccd5e2;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.carousel-section .carousel-slide.active .carousel-title,
+.carousel-section .carousel-slide.active footer {
+    opacity: 1;
+    visibility: visible;
+}

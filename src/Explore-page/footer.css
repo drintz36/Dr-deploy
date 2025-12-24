@@ -1,0 +1,145 @@
+/* footer */
+.footer {
+  background: #052c6f;
+  color: white;
+  min-height: 364.92px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.footer-content {
+  padding: 40px 10px 0px;
+  margin: 0px auto;
+}
+
+.logo1 {
+  text-align: center;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.logo-circle {
+  width: 105px;
+  /* border-radius: 50%; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.logo-circle1 {
+  display: flex;
+  align-items: center;
+  justify-content: c;
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  padding: 5px 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.nav-menu a:hover {
+  opacity: 0.7;
+}
+
+.social-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.social-title {
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  padding-bottom: 6px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 3px 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.social-icon svg {
+  width: 40px;
+  height: 30px;
+  fill: white;
+}
+.fb-icon svg {
+  width: 37px;
+  height: 40px;
+}
+.x-icon {
+  width: 30px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  /* line-height: 1.6; */
+  /* background-color:yellow; */
+  height: 17.13px;
+  /* flex-direction: column; */
+}
+
+.footer-links {
+  display: flex;
+  gap: 2px;
+  font-size: 8px;
+  font-weight: 400px;
+}
+
+.footer-links a {
+  color: white;
+  font-size: 8px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.language-selector {
+  display: flex;
+  gap: 5px;
+  /* background-color:blue; */
+}
+
+.lang-btn {
+  width: 50px;
+  height: auto;
+  border-radius: 3px;
+  cursor: pointer;
+}
