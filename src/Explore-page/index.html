@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="/src/css/slide_head.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/scroll.css">
+    <link rel="stylesheet" href="/src/css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="grid grid-rows-[auto_1fr_auto] min-h-screen">
+    <div class="header flex flex-col text-white p-0 text-center w-auto">
+        <div class="nav bg-white w-full h-[60px] md:!w-full md:h-[75px] lg:h-[90px] flex flex-row justify-center gap-4 md:gap-[10rem] lg:gap-[20rem] z-50 fixed shadow-lg px-2 md:px-0">
+            <div class="logo w-[100px] md:w-[125px] lg:w-[150px] h-auto mr-0  lg:mr-[9rem] mt-[5px] md:mt-[8px] lg:mt-[10px] justify-center items-center flex z-[110]">
+                <a href="/src/index.html" target="_blank" aria-label="x-block">
+                    <img src="/img/logo.png" class="h-[50px] md:h-[60px] md:mr-[20rem] lg:ml-[44rem] lg:ml-[20rem] lg:h-[70px] w-[80px] md:w-[100px] lg:w-[120px] xl:ml-[120px]" alt="">
+                </a>
+            </div>
+            <div class="nav-collapsible flex lg:flex flex-row items-center p-0 lg:mr-[24rem] xl:mr-[50px] justify-center">
+                <ul class="soc hidden lg:flex flex-row items-center transition-all mr-[4rem] lg:mr-[6rem] xl:mr-[12rem] xl:ml-[8rem] duration-400 z-[110]">
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-1.5 lg:p-2">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Twitter X Logo PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-2.5 lg:p-3.5">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Facebook Logo Icon Vector & Transparent PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-1 lg:p-1.5">
+                        <a href="https://www.youtube.com/channel/UCY26xU0-avwTJ6F6TzUZVEw" target="x-block" aria-label="x-block">
+                            <img src="/img/youtube.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-2 lg:p-3">
+                        <a href="https://www.instagram.com/DreamWorks/" target="x-block" aria-label="x-block">
+                            <img src="/img/Instragram.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black">
+                        <a href="https://www.tiktok.com/@dreamworks" target="x-block" aria-label="x-block">
+                            <img src="/img/TikTok.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="search-wrapper flex items-center shrink-0 z-[110] md:ml-[5rem] lg:ml-[-5rem]">
+                    <div class="search-container flex items-center flex-row-reverse">
+                        <button class="search-btn logo-link cursor-pointer focus:outline-none" id="searchBtn">
+                            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </button>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    </div>
+                </div>
+
+                <ul class="nav-links hidden lg:flex flex-row  items-center gap-[0.8rem] lg:gap-[1rem] pl-4 lg:pl-8 ml-auto">
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="/movie/movie.html" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">MOVIE</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-10 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Wild Robot">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Wild Robot</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Abominable">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Bad Guys">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Puss in Boots">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">TV</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-32 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">NOW STREAMING</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4 overflow-x-auto sm:overflow-visible">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Wild Robot">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/spirit-untamed-poster-1.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Spirit Untamed">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Spirit Untamed</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/croods-2-key-art-v3.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Croods 2">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Croods 2</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-2-keyart2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Bad Guys">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys 2</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Puss in Boots">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">EXPLORE</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-10 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">GAMES</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/httyd.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="HTTYD">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">HTTYD</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/httydp.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="HTTYD MOVIE">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">MOBILE APPS</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/panda.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Panda">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[270px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Panda</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/trollworld.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Troll World">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[270px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Troll World</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                      
+                </ul>
+                <div class="h-auto !flex items-center justify-center cursor-pointer md:ml-[4rem] ml-5 lg:ml-6 ">
+                    <button id="menuToggle" class="flex flex-col gap-[5px] w-6 lg:w-7 transition-all duration-300 relative h-5 items-center justify-center">
+                        <span class="line-1 h-[2px] w-full bg-[#052c6f] transition-all duration-300"></span>
+                        <span class="line-2 h-[2px] w-full bg-[#052c6f] transition-all duration-300"></span>
+                    </button>
+                </div> 
+            </div>
+            
+            <div class="subscribe-wrapper hidden lg:block xl:block">
+                <div id="subscribeBtn">
+                    <a href="#newsletter-section" class="subscribe-clip bg-white text-[#052c6f] px-6 md:px-8 lg:px-10 py-2 lg:py-3 font-bold text-[10px] uppercase tracking-[0.2em] block whitespace-nowrap shadow-md hover:bg-[#052c6f] hover:text-white">
+                        Subscribe to the newsletter
+                    </a>
+                </div>
+            </div>
+            <div id="blueMenu" class="fixed top-[60px] md:top-[75px] md:h-[100px] lg:top-[90px] left-0 w-full bg-[#052c6f] h-auto lg:h-[150px] z-[200] hidden items-center justify-center p-4 lg:p-0">
+                <ul class="flex flex-col lg:flex-row gap-6 sm:flex-row sm:text-[10px] md:text-[12px]  md:flex-row xl:flex lg:gap-16 text-white font-bold text-lg lg:text-[25px] tracking-[0.2em]">
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">TV</li>
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">MOVIES</li>
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">EXPLORE</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">About</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Careers</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Culture</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Classics</li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-section w-full h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px]">
+        <div class="slider-container !h-full" id="slider" tabindex="0">
+            <div class="slides-track" id="track">
+                <div class="slide" data-duration="6" data-title="GABBY'S DOLLHOUSE ROBLOX GAME">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/slide1.mp4" preload="metadata" loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">PLAY NOW</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="5" data-title="GABBY'S DOLLSHOUSE APP">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/slide2.mp4" preload="metadata" loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">GABBY'S DOLLSHOUSE APP</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">LEARN MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-container" id="line"></div>
+        </div>
+    </div>
+
+
+    <div class="main" style="flex: 1; width: 100%">
+      <!-- Hero Section -->
+      <div
+        class="hero-section"
+        style="display: flex; flex-direction: column; width: 100%; height: auto"
+      >
+        <div
+          class="hero-text1"
+          style="
+            background-image: url('./Explore-img/minecreft.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 250px;
+            flex: 1;
+          "
+        >
+          <h1
+            style="
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+              color: white;
+              margin: 0 0 15px 0;
+            "
+          >
+            HTTYD x Minecraft Add-On pack
+          </h1>
+          <button
+            style="
+              align-self: flex-start;
+              border: 1px solid white;
+              background: transparent;
+              color: white;
+              padding: 10px 15px;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.5px;
+              cursor: pointer;
+            "
+          >
+            LEARN MORE
+          </button>
+        </div>
+        <div
+          class="hero-text2"
+          style="
+            background-image: url('./Explore-img/girls.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 250px;
+            flex: 1;
+          "
+        >
+          <h1
+            style="
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+              color: white;
+             
+            "
+          >
+            Gabby's Dollhouse: Ready To Party
+          </h1>
+          <button
+            style="
+              align-self: flex-start;
+              border: 1px solid white;
+              background: transparent;
+              color: white;
+              padding: 10px 15px;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.5px;
+              cursor: pointer;
+            "
+          >
+            AVAILABLE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Section Games -->
+      <div class="games-section">
+        <!-- Page Game1 -->
+        <div class="game1">
+          <h1>PC & CONSOLE GAMES</h1>
+          <div class="scroll-group">
+            <div class="img-game">
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/panda.jpg" alt="" />
+                <h2>KUNG FU PANDA: TRAIN LIKE A MASTER ON NEX PLAYGROUND</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/girls.jpg" alt="" />
+                <h2>Gabby's Dollhouse: Ready To Party</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/minecreft.jpg" alt="" />
+                <h2>HTTYD x Minecraft Add-On pack</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/dragon.jpg" alt="" />
+                <h2>
+                  How to Train Your Dragon: Riders of the Sky on Nex Playground
+                </h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/meow.jpg" alt="" />
+                <h2>Gabby’s Dollhouse: A-meow-zing Moves on Nex Playground</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll1.jpg"
+                  alt=""
+                />
+                <h2>Trolls Remix Rescue</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll2.jpg"
+                  alt=""
+                />
+                <h2>DWA All-Star Kart Racing</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll3.jpg"
+                  alt=""
+                />
+                <h2>School of Dragons</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll7.jpg"
+                  alt=""
+                />
+                <h2>Dragons: Dawn of New Riders</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll4.jpg"
+                  alt=""
+                />
+                <h2>Spirit Lucky's Big Adventure</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll5.jpg"
+                  alt=""
+                />
+                <h2>Minecraft x DreamWorks How to Train Your Dragon</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll6.jpg"
+                  alt=""
+                />
+                <h2>Defenders of Arcadia</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game">
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/panda.jpg" alt="" />
+                <h2>KUNG FU PANDA: TRAIN LIKE A MASTER ON NEX PLAYGROUND</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/girls.jpg" alt="" />
+                <h2>Gabby's Dollhouse: Ready To Party</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/minecreft.jpg" alt="" />
+                <h2>HTTYD x Minecraft Add-On pack</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/dragon.jpg" alt="" />
+                <h2>
+                  How to Train Your Dragon: Riders of the Sky on Nex Playground
+                </h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/meow.jpg" alt="" />
+                <h2>Gabby’s Dollhouse: A-meow-zing Moves on Nex Playground</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll1.jpg"
+                  alt=""
+                />
+                <h2>Trolls Remix Rescue</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll2.jpg"
+                  alt=""
+                />
+                <h2>DWA All-Star Kart Racing</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll3.jpg"
+                  alt=""
+                />
+                <h2>School of Dragons</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll7.jpg"
+                  alt=""
+                />
+                <h2>Dragons: Dawn of New Riders</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll4.jpg"
+                  alt=""
+                />
+                <h2>Spirit Lucky's Big Adventure</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll5.jpg"
+                  alt=""
+                />
+                <h2>Minecraft x DreamWorks How to Train Your Dragon</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll6.jpg"
+                  alt=""
+                />
+                <h2>Defenders of Arcadia</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game">
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/panda.jpg" alt="" />
+                <h2>KUNG FU PANDA: TRAIN LIKE A MASTER ON NEX PLAYGROUND</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/girls.jpg" alt="" />
+                <h2>Gabby's Dollhouse: Ready To Party</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/minecreft.jpg" alt="" />
+                <h2>HTTYD x Minecraft Add-On pack</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/dragon.jpg" alt="" />
+                <h2>
+                  How to Train Your Dragon: Riders of the Sky on Nex Playground
+                </h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/meow.jpg" alt="" />
+                <h2>Gabby’s Dollhouse: A-meow-zing Moves on Nex Playground</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll1.jpg"
+                  alt=""
+                />
+                <h2>Trolls Remix Rescue</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll2.jpg"
+                  alt=""
+                />
+                <h2>DWA All-Star Kart Racing</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll3.jpg"
+                  alt=""
+                />
+                <h2>School of Dragons</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll7.jpg"
+                  alt=""
+                />
+                <h2>Dragons: Dawn of New Riders</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll4.jpg"
+                  alt=""
+                />
+                <h2>Spirit Lucky's Big Adventure</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll5.jpg"
+                  alt=""
+                />
+                <h2>Minecraft x DreamWorks How to Train Your Dragon</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll6.jpg"
+                  alt=""
+                />
+                <h2>Defenders of Arcadia</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game">
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/panda.jpg" alt="" />
+                <h2>KUNG FU PANDA: TRAIN LIKE A MASTER ON NEX PLAYGROUND</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/girls.jpg" alt="" />
+                <h2>Gabby's Dollhouse: Ready To Party</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/minecreft.jpg" alt="" />
+                <h2>HTTYD x Minecraft Add-On pack</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/dragon.jpg" alt="" />
+                <h2>
+                  How to Train Your Dragon: Riders of the Sky on Nex Playground
+                </h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/meow.jpg" alt="" />
+                <h2>Gabby’s Dollhouse: A-meow-zing Moves on Nex Playground</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll1.jpg"
+                  alt=""
+                />
+                <h2>Trolls Remix Rescue</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll2.jpg"
+                  alt=""
+                />
+                <h2>DWA All-Star Kart Racing</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll3.jpg"
+                  alt=""
+                />
+                <h2>School of Dragons</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll7.jpg"
+                  alt=""
+                />
+                <h2>Dragons: Dawn of New Riders</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll4.jpg"
+                  alt=""
+                />
+                <h2>Spirit Lucky's Big Adventure</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll5.jpg"
+                  alt=""
+                />
+                <h2>Minecraft x DreamWorks How to Train Your Dragon</h2>
+              </div>
+              <div class="game-img1">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game1-scroll6.jpg"
+                  alt=""
+                />
+                <h2>Defenders of Arcadia</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game2 -->
+        <div class="game2">
+          <h1>ONLINE & BROWSER GAMES</h1>
+          <div class="scroll-group2">
+            <div class="img-game2">
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online1.jpg" alt="" />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS <br />CATCH THE THIEF</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online2.jpg" alt="" />
+                <h2>GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online3.jpg" alt="" />
+                <h2>DASH THROUGH MIRADERO</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online4.jpg" alt="" />
+                <h2>MAGICAL STICKER STORYBOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online5.jpg" alt="" />
+                <h2>ANIMATED COLORING BOOK</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game2">
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online1.jpg" alt="" />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS <br />CATCH THE THIEF</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online2.jpg" alt="" />
+                <h2>GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online3.jpg" alt="" />
+                <h2>DASH THROUGH MIRADERO</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online4.jpg" alt="" />
+                <h2>MAGICAL STICKER STORYBOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online5.jpg" alt="" />
+                <h2>ANIMATED COLORING BOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll1.jpg"
+                  alt=""
+                />
+                <h2>MEMORY MATCH</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll2.jpg"
+                  alt=""
+                />
+                <h2>JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll3.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN DANCE COMMANDER</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll4.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN PUZZLE PARTY</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Library-img-2.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN EXILED</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Library-img 6.jpg"
+                  alt=""
+                />
+                <h2>BOSS BABY PERSONALITY QUIZ</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll5.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX PAINT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll6.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll7.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX MEMORY MATCH</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll8.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX REVVIT'S REPAIR RALLY</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/17.jpg" alt="" />
+                <h2>DINOTRUX SKYA'S SLINGSHOT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll9.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE PAINT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll10.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll11.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll12.jpg"
+                  alt=""
+                />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS TRIALS OF THE HOURGLASS</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game2">
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online1.jpg" alt="" />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS <br />CATCH THE THIEF</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online2.jpg" alt="" />
+                <h2>GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online3.jpg" alt="" />
+                <h2>DASH THROUGH MIRADERO</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online4.jpg" alt="" />
+                <h2>MAGICAL STICKER STORYBOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online5.jpg" alt="" />
+                <h2>ANIMATED COLORING BOOK</h2>
+              </div>
+            </div>
+            <!--  -->
+            <div class="img-game2">
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online1.jpg" alt="" />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS <br />CATCH THE THIEF</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online2.jpg" alt="" />
+                <h2>GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online3.jpg" alt="" />
+                <h2>DASH THROUGH MIRADERO</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online4.jpg" alt="" />
+                <h2>MAGICAL STICKER STORYBOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/online5.jpg" alt="" />
+                <h2>ANIMATED COLORING BOOK</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll1.jpg"
+                  alt=""
+                />
+                <h2>MEMORY MATCH</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll2.jpg"
+                  alt=""
+                />
+                <h2>JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll3.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN DANCE COMMANDER</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll4.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN PUZZLE PARTY</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Library-img-2.jpg"
+                  alt=""
+                />
+                <h2>ALL HAIL KING JULIEN EXILED</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Library-img 6.jpg"
+                  alt=""
+                />
+                <h2>BOSS BABY PERSONALITY QUIZ</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll5.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX PAINT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll6.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll7.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX MEMORY MATCH</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll8.jpg"
+                  alt=""
+                />
+                <h2>DINOTRUX REVVIT'S REPAIR RALLY</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img src="/src/Explore-page/explore-img/17.jpg" alt="" />
+                <h2>DINOTRUX SKYA'S SLINGSHOT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll9.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE PAINT</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll10.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll11.jpg"
+                  alt=""
+                />
+                <h2>NODDY TOYLAND DETECTIVE JIGSAW PUZZLE</h2>
+              </div>
+              <div class="game-img2">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/game2-scroll12.jpg"
+                  alt=""
+                />
+                <h2>THE ADVENTURES OF PUSS IN BOOTS TRIALS OF THE HOURGLASS</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game3 -->
+        <div class="game3">
+          <h1>MOBILE APP GAME</h1>
+          <div class="img-game-3">
+            <div class="game-img3">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/Mobile1.jpg" alt="" />
+              <h2>HTTYD X MINECRAFT ADD-ON PACK</h2>
+            </div>
+            <div class="game-img3">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/mobile2.jpg" alt="" />
+              <h2>DRAGONS: RISE OF BERK</h2>
+            </div>
+            <div class="game-img3">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/mobile3.jpg" alt="" />
+              <h2>GABBY’S DOLLHOUSE APP</h2>
+            </div>
+            <div class="game-img3">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/mobile4.jpg" alt="" />
+              <h2>FUNKO POP! BLITZ</h2>
+            </div>
+            <div class="game-img3">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/mobile5.jpg" alt="" />
+              <h2>DRAGONS: TITAN UPRISING</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game4 -->
+        <div class="game4">
+          <h1>PRINTABLES</h1>
+          <div class="img-game-4">
+            <div class="game-img4">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/meow2.jpg" alt="" />
+              <h2>GABBY GLOWING GLOBULES</h2>
+            </div>
+            <div class="game-img4">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/unicorn.jpg" alt="" />
+              <h2>SPIRIT UNTAMED ACTIVITY KIT</h2>
+            </div>
+            <div class="game-img4">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/trollworld.jpg" alt="" />
+              <h2>TROLLS WORLD TOUR ACTIVITY KIT</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page Game5 -->
+        <div class="game5">
+          <h1>MOBILE STICKERS</h1>
+          <div class="scroll-group5">
+            <div class="img-game5">
+              <div class="game-img5">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Mobile Stickers img-1.jpg"
+                  alt=""
+                />
+                <h2>SPIRIT RIDING FREE MOBILE STICKERS</h2>
+              </div>
+              <div class="game-img5">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Mobile Stickers img-2.jpg"
+                  alt=""
+                />
+                <h2>GABBY'S DOLLHOUSE MOBILE STICKERS</h2>
+              </div>
+              <div class="game-img5">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Mobile Stickers img-3.jpg"
+                  alt=""
+                />
+                <h2>KIPO & THE AGE OF WONDERBEASTS MOBILE STICKERS</h2>
+              </div>
+              <div class="game-img5">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Mobile Stickers img-4.jpg"
+                  alt=""
+                />
+                <h2>FAST & FURIOUS SPY RACERS MOBILE STICKERS</h2>
+              </div>
+              <div class="game-img5">
+                <p class="text-after-blur">SEE MORE</p>
+                <img
+                  src="/src/Explore-page/explore-img/Mobile Stickers img-5.jpg"
+                  alt=""
+                />
+                <h2>HOME: ADVENTURES WITH TIP & OH MOBILE STICKERS</h2>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+
+        <!-- Page Game6 -->
+        <!-- library -->
+        <div class="game6">
+          <div class="search">
+            <h1>LIBRARY</h1>
+            <div class="search-input1">
+              <input type="search" placeholder="SEARCH" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div class="img-game6">
+            <div class="game-img6">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 1.jpg"
+                alt=""
+              />
+              <h2>ALL HAIL KING JULIEN DANCE COMMANDER</h2>
+            </div>
+            <div class="game-img6">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img-2.jpg"
+                alt=""
+              />
+              <h2>ALL HAIL KING JULIEN EXILED</h2>
+            </div>
+            <div class="game-img6">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img-3.jpg"
+                alt=""
+              />
+              <h2>ALL HAIL KING JULIEN PUZZLE PARTY</h2>
+            </div>
+            <div class="game-img6">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img-4.jpg"
+                alt=""
+              />
+              <h2>ANIMATED COLORING BOOK</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game7 -->
+        <div class="game7">
+          <div class="img-game7">
+            <div class="game-img7">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 5.png"
+                alt=""
+              />
+              <h2>BLING FLING</h2>
+            </div>
+            <div class="game-img-7">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 6.jpg"
+                alt=""
+              />
+              <h2>BOSS BABY PERSONALITY QUIZ</h2>
+            </div>
+            <div class="game-img-7">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 7.jpg"
+                alt=""
+              />
+              <h2>CAMP CRETACEOUS</h2>
+            </div>
+            <div class="game-img-7">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 8.jpg"
+                alt=""
+              />
+              <h2>CRUSH 4 U</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page Game8 -->
+        <div class="game8">
+          <div class="img-game8">
+            <div class="game-img8">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 10.jpg"
+                alt=""
+              />
+              <h2>DWA ALL-STAR KART RACING</h2>
+            </div>
+            <div class="game-img8">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 11.jpg"
+                alt=""
+              />
+              <h2>DASH THROUGH MIRADERO</h2>
+            </div>
+            <div class="game-img8">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 12.jpg"
+                alt=""
+              />
+              <h2>DEFENDERS OF ARCADIA</h2>
+            </div>
+            <div class="game-img8">
+              <p class="text-after-blur">SEE MORE</p>
+              <img
+                src="/src/Explore-page/explore-img/Library-img 13.jpg"
+                alt=""
+              />
+              <h2>DINOTRUX JIGSAW PUZZLE</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game9-->
+        <div class="game9">
+          <div class="img-game9">
+            <div class="game-img9">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/14.jpg" alt="" />
+              <h2>DINOTRUX MEMORY MATCH</h2>
+            </div>
+            <div class="game-img9">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/15.jpg" alt="" />
+              <h2>DINOTRUX PAINT</h2>
+            </div>
+            <div class="game-img9">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/16.jpg" alt="" />
+              <h2>DINOTRUX REVVIT'S REPAIR RALLY</h2>
+            </div>
+            <div class="game-img9">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/17.jpg" alt="" />
+              <h2>DINOTRUX SKYA'S SLINGSHOT</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game10 -->
+        <div class="game10">
+          <div class="img-game10">
+            <div class="game-img10">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/18.jpg" alt="" />
+              <h2>DRAGONS: DAWN OF NEW RIDERS</h2>
+            </div>
+            <div class="game-img10">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/19.jpg" alt="" />
+              <h2>DRAGONS: RISE OF BERK</h2>
+            </div>
+            <div class="game-img10">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/20.jpg" alt="" />
+              <h2>DRAGONS: TITAN UPRISING</h2>
+            </div>
+            <div class="game-img10">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/21.png" alt="" />
+              <h2>EXPERIENCE HOW TO TRAIN YOUR DRAGON ON ROBLOX</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game11 -->
+        <div class="game11">
+          <div class="img-game11">
+            <div class="game-img11">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game11-img1.jpg" alt="" />
+              <h2>FAST & FURIOUS SPY RACERS MOBILE STICKERS</h2>
+            </div>
+            <div class="game-img11">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game11-img2.jpg" alt="" />
+              <h2>FUNKO POP! BLITZ</h2>
+            </div>
+            <div class="game-img11">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game11-img3.jpg" alt="" />
+              <h2>GABBY GLOWING GLOBULES</h2>
+            </div>
+            <div class="game-img11">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game11-img4.jpg" alt="" />
+              <h2>GABBY'S DOLLHOUSE MOBILE STICKERS</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game12 -->
+        <div class="game12">
+          <div class="img-game12">
+            <div class="game-img12">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game12-img1.jpg" alt="" />
+              <h2>GABBY'S DOLLHOUSE ROBLOX GAME</h2>
+            </div>
+            <div class="game-img12">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game12-img2.jpg" alt="" />
+              <h2>GABBY'S DOLLHOUSE: READY TO PARTY</h2>
+            </div>
+            <div class="game-img12">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game12-img3.jpg" alt="" />
+              <h2>GABBY’S DOLLHOUSE APP</h2>
+            </div>
+            <div class="game-img12">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game12-img4.jpg" alt="" />
+              <h2>GABBY’S DOLLHOUSE: A-MEOW-ZING MOVES ON NEX PLAYGROUND</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game13 -->
+        <div class="game13">
+          <div class="img-game13">
+            <div class="game-img13">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game13-img1.jpg" alt="" />
+              <h2>HTTYD X MINECRAFT ADD-ON PACK</h2>
+            </div>
+            <div class="game-img13">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game13-img2.jpg" alt="" />
+              <h2>HOME: ADVENTURES WITH TIP & OH MOBILE STICKERS</h2>
+            </div>
+            <div class="game-img13">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game13-img3.jpg" alt="" />
+              <h2>
+                HOW TO TRAIN YOUR DRAGON: RIDERS OF THE SKY ON NEX PLAYGROUND
+              </h2>
+            </div>
+            <div class="game-img13">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game13-img4.jpg" alt="" />
+              <h2>JIGSAW PUZZLE</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game14 -->
+        <div class="game14">
+          <div class="img-game14">
+            <div class="game-img14">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game14-img1.jpg" alt="" />
+              <h2>KIPO & THE AGE OF WONDERBEASTS MOBILE STICKERS</h2>
+            </div>
+            <div class="game-img14">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game14-img2.jpg" alt="" />
+              <h2>KUNG FU PANDA ON MINECRAFT</h2>
+            </div>
+            <div class="game-img14">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game14-img3.jpg" alt="" />
+              <h2>KUNG FU PANDA: TRAIN LIKE A MASTER ON NEX PLAYGROUND</h2>
+            </div>
+            <div class="game-img14">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game14-img4.jpg" alt="" />
+              <h2>MAGICAL STICKER STORYBOOK</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game15 -->
+        <div class="game15">
+          <div class="img-game15">
+            <div class="game-img-15">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game15-img1.jpg" alt="" />
+              <h2>MEMORY MATCH</h2>
+            </div>
+            <div class="game-img-15">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game15-img2.jpg" alt="" />
+              <h2>MINECRAFT X DREAMWORKS HOW TO TRAIN YOUR DRAGON</h2>
+            </div>
+            <div class="game-img15">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game15-img3.png" alt="" />
+              <h2>MR. SNAKE'S SAFE CRACKER</h2>
+            </div>
+            <div class="game-img-15">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game15-img4.jpg" alt="" />
+              <h2>NODDY TOYLAND DETECTIVE JIGSAW PUZZLE</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game16 -->
+        <div class="game16">
+          <div class="img-game16">
+            <div class="game-img16">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game16-img1.jpg" alt="" />
+              <h2>NODDY TOYLAND DETECTIVE MEMORY MATCH</h2>
+            </div>
+            <div class="game-img16">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game16-img2.jpg" alt="" />
+              <h2>NODDY TOYLAND DETECTIVE PAINT</h2>
+            </div>
+            <div class="game-img16">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game16-img3.jpg" alt="" />
+              <h2>SCHOOL OF DRAGONS</h2>
+            </div>
+            <div class="game-img16">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game16-img4.jpg" alt="" />
+              <h2>SHE-RA AND THE PRINCESSES OF POWER MOBILE STICKERS</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game17 -->
+        <div class="game17">
+          <div class="img-game17">
+            <div class="game-img17">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game17-img1.jpg" alt="" />
+              <h2>SHREK SPECIAL PACK ON POWERWASH SIMULATOR</h2>
+            </div>
+            <div class="game-img17">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game17-img2.jpg" alt="" />
+              <h2>SHREK SWAMP TYCOON ON ROBLOX</h2>
+            </div>
+            <div class="game-img17">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game17-img3.jpg" alt="" />
+              <h2>SHREK STITCH. ON APPLE ARCADE</h2>
+            </div>
+            <div class="game-img17">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game17-img4.jpg" alt="" />
+              <h2>SPIRIT LUCKY'S BIG ADVENTURE</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game18 -->
+        <div class="game18">
+          <div class="img-game18">
+            <div class="game-img18">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game18-img1.jpg" alt="" />
+              <h2>SPIRIT RIDING FREE MOBILE STICKERS</h2>
+            </div>
+            <div class="game-img18">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game18-img2.jpg" alt="" />
+              <h2>SPIRIT RIDING FREE MOBILE STICKERS</h2>
+            </div>
+            <div class="game-img18">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game18-img3.jpg" alt="" />
+              <h2>SPY RACERS INVISIBLE INK</h2>
+            </div>
+            <div class="game-img18">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game18-img4.jpg" alt="" />
+              <h2>THE ADVENTURES OF PUSS IN BOOTS CATCH THE THIEF</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Page Game19 -->
+        <div class="game19">
+          <div class="img-game19">
+            <div class="game-img19">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game19-img1.jpg" alt="" />
+              <h2>THE ADVENTURES OF PUSS IN BOOTS TRIALS OF THE HOURGLASS</h2>
+            </div>
+            <div class="game-img19">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game19-img2.jpg" alt="" />
+              <h2>THE BOSS BABY - BACKYARD RACER</h2>
+            </div>
+            <div class="game-img19">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game19-img3.jpg" alt="" />
+              <h2>TROLLS REMIX RESCUE</h2>
+            </div>
+            <div class="game-img19">
+              <p class="text-after-blur">SEE MORE</p>
+              <img src="/src/Explore-page/explore-img/game19-img4.jpg" alt="" />
+              <h2>TROLLS WORLD TOUR ACTIVITY KIT</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- section & img -->
+        <div class="section-contact">
+          <div class="contact-form">
+            <h2>STAY IN TOUCH</h2>
+            <p>
+              Register today for the DreamWorks Animation newsletter to receive
+              <br />all the latest information about our upcoming films and
+              projects.
+            </p>
+            <form class="form-intouch">
+              <h2>ENTER BIRTH DATE</h2>
+              <div class="input-day-month-year">
+                <label class="day">
+                  <div class="label">MONTH</div>
+                  <input type="text" />
+                </label>
+
+                <label class="day">
+                  <div class="label">DAY</div>
+                  <input type="text" />
+                </label>
+
+                <label class="day">
+                  <div class="label">YEAR</div>
+                  <input type="text" />
+                </label>
+              </div>
+            </form>
+            <!-- Button Form -->
+            <button class="contact-btn1">NEXT</button>
+          </div>
+
+          <div class="contact-img">
+            <img src="/src/Explore-page/explore-img/contact-img.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="logo1">
+          <div class="logo-circle logo-circle1">
+            <img src="/img/footer/image copy 7.png" alt="" />
+          </div>
+        </div>
+
+        <nav class="nav-menu">
+          <a href="#home">HOME</a>
+          <a href="#movies">MOVIES</a>
+          <a href="#tv-shows">TV SHOWS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#careers">CAREERS</a>
+          <a href="#culture">CULTURE</a>
+          <a href="#classics">CLASSICS</a>
+        </nav>
+
+        <div class="social-section">
+          <div class="social-title">FOLLOW DREAMWORKS</div>
+          <div class="social-icons">
+            <!-- twitter-icon -->
+            <div class="social-icon x-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </div>
+
+            <!-- facebook-icon -->
+            <div class="social-icon fb-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+              </svg>
+            </div>
+
+            <!-- youtube-icon -->
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </div>
+
+            <!-- Instragram-icon -->
+            <div class="social-icon">
+              <img src="/img/footer/[CITYPNG.COM]HD White Outline Round Instagram Logo Icon PNG - 2000x2000.png" alt="" />
+            </div>
+            <!-- tiktok-icon -->
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-links">
+            <span>&copy; 2025 DREAMWORKS ANIMATION ALL RIGHTS RESERVED.</span>
+            <span>A DIVISION OF</span>
+            <a href="#">NBCUNIVERSAL. </a>
+            <a href="#">PRIVACY POLICY</a>
+            <span>|</span>
+            <a href="#">COOKIE NOTICE</a>
+            <span>|</span>
+            <a href="#">TERMS OF SERVICE</a>
+            <span>|</span>
+            <a href="#">YOUTUBE TERMS OF SERVICE</a>
+            <span>|</span>
+            <a href="#">GOOGLE PRIVACY POLICY</a>
+          </div>
+          <div class="language-selector">
+            <div class="lang-btn">
+              <img src="/img/footer/image copy 6.png" alt="" />
+            </div>
+            <div class="lang-btn">
+              <img src="/img/footer/image copy 5.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/src/javascript/slide.js"></script>
+    <script src="/src/javascript/slide_head.js"></script>
+    <script src="/src/javascript/hover-feature.js"></script>
+    <script src="/src/javascript/menu.js"></script> 
+    <script src="/src/javascript/about.js"></script>
+  </body>
+</html>
