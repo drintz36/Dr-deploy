@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <title>Tv</title>
+   
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <link rel="stylesheet" href="/src/tv/tv.css">
+    <link rel="stylesheet" href="/src/css/scroll.css">
+    <link rel="stylesheet" href="/src/css/slide_head.css">
+    <link rel="stylesheet" href="/src/tv/responsive.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="grid grid-rows-[auto_1fr_auto]  min-h-[100vh]">
+
+    <div class="header flex flex-col text-white p-0 text-center w-auto">
+        <div class="nav bg-white w-full h-[60px] md:!w-full md:h-[75px] lg:h-[90px] flex flex-row justify-center gap-4 md:gap-[10rem] lg:gap-[20rem] z-50 fixed shadow-lg px-2 md:px-0">
+            <div class="logo w-[100px] md:w-[125px] lg:w-[150px] h-auto mr-0  lg:mr-[9rem] mt-[5px] md:mt-[8px] lg:mt-[10px] justify-center items-center flex z-[110]">
+                <a href="/src/index.html" target="_blank" aria-label="x-block">
+                    <img src="/img/logo.png" class="h-[50px] md:h-[60px] md:mr-[20rem] sm:mt-[1rem] lg:mt-[1rem] lg:ml-[44rem] lg:ml-[20rem] lg:h-[70px] w-[80px] md:w-[100px] lg:w-[120px] xl:ml-[120px]" alt="">
+                </a>
+            </div>
+            <div class="nav-collapsible flex lg:flex flex-row items-center p-0 lg:mr-[24rem] xl:mr-[50px] justify-center">
+                <ul class="soc hidden lg:flex flex-row items-center transition-all mr-[4rem] lg:mr-[6rem] xl:mr-[12rem] xl:ml-[8rem] duration-400 z-[110]">
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-1.5 lg:p-2">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Twitter X Logo PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-2.5 lg:p-3.5">
+                        <a href="https://x.com/DreamWorks" target="x-block" aria-label="x-block">
+                            <img src="/img/Facebook Logo Icon Vector & Transparent PNG.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-1 lg:p-1.5">
+                        <a href="https://www.youtube.com/channel/UCY26xU0-avwTJ6F6TzUZVEw" target="x-block" aria-label="x-block">
+                            <img src="/img/youtube.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black p-2 lg:p-3">
+                        <a href="https://www.instagram.com/DreamWorks/" target="x-block" aria-label="x-block">
+                            <img src="/img/Instragram.png" alt="">
+                        </a>
+                    </li>
+                    <li class="h-auto w-[50px] lg:w-[60px] flex justify-center items-center text-black">
+                        <a href="https://www.tiktok.com/@dreamworks" target="x-block" aria-label="x-block">
+                            <img src="/img/TikTok.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="search-wrapper flex items-center shrink-0 z-[110] md:ml-[5rem] lg:ml-[-5rem]">
+                    <div class="search-container flex items-center flex-row-reverse">
+                        <button class="search-btn logo-link cursor-pointer focus:outline-none" id="searchBtn">
+                            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </button>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    </div>
+                </div>
+
+                <ul class="nav-links hidden lg:flex flex-row  items-center gap-[0.8rem] lg:gap-[1rem] pl-4 lg:pl-8 ml-auto">
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">MOVIE</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-10 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">HOME ENTERTAINMENT</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-wild-robot-keyart4.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Wild Robot">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Wild Robot</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/abominable-keyart.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Abominable">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Bad Guys">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Puss in Boots">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">TV</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-32 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">NOW STREAMING</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4 overflow-x-auto sm:overflow-visible">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-key-art.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Wild Robot">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/spirit-untamed-poster-1.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Spirit Untamed">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Spirit Untamed</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px] flex-shrink-0">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/croods-2-key-art-v3.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Croods 2">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Croods 2</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">FRANCHISE</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/the-bad-guys-2-keyart2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="The Bad Guys">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">The Bad Guys 2</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[240px] w-full sm:w-[150px] lg:w-[170px]">
+                                            <div class="relative h-[200px] sm:h-[230px] lg:h-[250px] w-full lg:w-[170px] overflow-hidden group">
+                                                <img src="/img/puss-in-boots-the-last-wish-key-art2.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Puss in Boots">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Puss in Boots</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-auto w-[50px] lg:w-[60px] flex flex-col justify-center items-center text-black p-2 lg:p-3 text-xs font-bold uppercase">
+                        <a href="#" class="nav-link logo-link hover:text-blue-500 transition-colors duration-300">EXPLORE</a>
+                        <div class="nav-dropdown bg-[#052c6f] w-full flex flex-col fixed top-[60px] md:top-[75px] lg:top-[90px] left-0 h-auto lg:h-[450px] hidden overflow-y-auto lg:overflow-visible">
+                            <div class="bg-[#052c6f] h-auto lg:h-[400px] w-full flex flex-col lg:flex-row justify-center gap-6 lg:gap-10 p-4 lg:p-0">
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">GAMES</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/httyd.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="HTTYD">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">HTTYD</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/httydp.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="HTTYD MOVIE">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[170px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Abominable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-auto lg:h-[310px] w-full lg:w-fit flex flex-col justify-center items-start gap-4">
+                                    <div class="w-full">
+                                        <h2 class="text-base lg:text-[1.2rem] font-bold text-left text-white">MOBILE APPS</h2>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/panda.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Panda">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[270px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Panda</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-auto lg:h-[140px] w-full sm:w-[220px] lg:w-[270px]">
+                                            <div class="relative h-[120px] sm:h-[140px] lg:h-[150px] w-full lg:w-[270px] overflow-hidden group">
+                                                <img src="/img/trollworld.jpg" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px]" alt="Troll World">
+                                                <a href="#" class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                                                    <h1 class="text-white text-sm lg:text-[15px] font-bold uppercase tracking-wider">See More</h1>
+                                                </a>
+                                            </div>
+                                            <div class="h-auto lg:h-[40px] w-full lg:w-[270px] pt-1">
+                                                <p class="text-left text-white text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.2em] antialiased">Troll World</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#052c6f] h-[60px] lg:h-[70px] w-full flex flex-row justify-center items-center transition-all duration-300 border-t border-white/20 hover:bg-blue-500">
+                                <a href="#" class="text-white text-[0.7rem] lg:text-[0.8rem] font-semibold tracking-[0.25em] uppercase flex justify-center items-center h-full w-full">
+                                    VIEW ALL MOVIES
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                      
+                </ul>
+                <div class="h-auto !flex items-center justify-center cursor-pointer md:ml-[4rem] ml-5 lg:ml-6 ">
+                    <button id="menuToggle" class="flex flex-col gap-[5px] w-6 lg:w-7 transition-all duration-300 relative h-5 items-center justify-center">
+                        <span class="line-1 h-[2px] w-full bg-[#052c6f] transition-all duration-300"></span>
+                        <span class="line-2 h-[2px] w-full bg-[#052c6f] transition-all duration-300"></span>
+                    </button>
+                </div> 
+            </div>
+            
+            <div class="subscribe-wrapper hidden lg:block xl:block">
+                <div id="subscribeBtn">
+                    <a href="#newsletter-section" class="subscribe-clip bg-white text-[#052c6f] px-6 md:px-8 lg:px-10 py-2 lg:py-3 font-bold text-[10px] uppercase tracking-[0.2em] block whitespace-nowrap shadow-md hover:bg-[#052c6f] hover:text-white">
+                        Subscribe to the newsletter
+                    </a>
+                </div>
+            </div>
+            <div id="blueMenu" class="fixed top-[60px] md:top-[75px] md:h-[100px] lg:top-[90px] left-0 w-full bg-[#052c6f] h-auto lg:h-[150px] z-[200] hidden items-center justify-center p-4 lg:p-0">
+                <ul class="flex flex-col lg:flex-row gap-6 sm:flex-row sm:text-[10px] md:text-[12px]  md:flex-row xl:flex lg:gap-16 text-white font-bold text-lg lg:text-[25px] tracking-[0.2em]">
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">TV</li>
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">MOVIES</li>
+                    <li class="block lg:!hidden hover:text-blue-400 cursor-pointer uppercase text-center">EXPLORE</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">About</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Careers</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Culture</li>
+                    <li class="hover:text-blue-400 cursor-pointer uppercase text-center">Classics</li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-section w-full h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px]">
+        <div class="slider-container !h-full" id="slider" tabindex="0">
+            <div class="slides-track" id="track">
+                <div class="slide" data-duration="6" data-title="JURASSIC WORLD: CHAOS THEORY">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/JWCT_S4_Trailer_v2.mp4" autoplay loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <p class="font-sans text-white font-medium uppercase tracking-[0.15em] antialiased text-xs md:text-sm lg:text-base">FINAL SEASON NOW PLAYING ON NETFLIX</p>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">JURASSIC <br>WORLD : CHAOS THEORY</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">OFFICIAL SITE</button>
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="5" data-title="GABBY'S DOLLSHOUSE">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/GAB_s12_Trailer_TXTD_DWA-POST_H264_1080_2398_091525 (2).mp4" autoplay loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <p class="font-sans text-white font-medium uppercase tracking-[0.15em] antialiased text-xs md:text-sm lg:text-base">NEW SEASON NOW PLAYING ON NETFLIX</p>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">GABBY'S DOLLSHOUSE</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">OFFICIAL SITE</button>
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="5" data-title="THE BAD GUYS: BREAKING IN">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/BG_S1_Trailerv2.mp4" autoplay loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <p class="font-sans text-white font-medium uppercase tracking-[0.15em] antialiased text-xs md:text-sm lg:text-base">NOW PLAYING ON NETFLIX</p>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">THE BAD GUYS: BREAKING IN</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">OFFICIAL SITE</button>
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="5" data-title="GABBY'S DOLLSHOUSE: THE MOVIE">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/gabbys-dollhouse-the-movie-header-video.mp4" autoplay loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div class="text">
+                            <p class="font-sans text-white font-medium uppercase tracking-[0.15em] antialiased text-xs md:text-sm lg:text-base">Available Now On<br>
+                                Digital, Blu-Ray™ & DVD</p>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">GABBY'S DOLLSHOUSE: THE MOVIE</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">OFFICIAL SITE</button>
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" data-duration="5.5" data-title="THE BAD GUYS 2">
+                    <video class="h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1090px] w-full object-cover z-5" src="/img/video/the-bad-guys-2-header-video.mp4" autoplay loop muted playsinline></video>
+                    <div class="slide-overlay">
+                        <div>
+                            <p class="font-sans text-white font-medium uppercase tracking-[0.15em] antialiased text-xs md:text-sm lg:text-base">Available Now On<br>
+                                Digital, 4K UHD, Blu-Ray™ & DVD</p>
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">THE BAD GUYS 2</h2>
+                        </div>
+                        <div class="text">
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">OFFICIAL SITE</button>
+                            <button class="text-g1 text-xs md:text-sm lg:text-base">WATCH VIDEO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-container" id="line"></div>
+        </div>
+    </div>
+
+
+    <main>
+
+        <!-- under-header -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 min-h-[432px] bg-gray-500">
+            <div class="flex justify-end bg-[#ececec]">
+                <div class="s1">
+                    <!-- img -->
+                </div>
+                <div class="w-[720px] h-[432px] flex flex-col justify-end pt-[30px] pr-[30px] pb-[20px] pl-[15px]">
+                    <h1 class="font-bold uppercase tracking-[0.5px] text-[21px] text-white">Kung Fu Panda: The Dragon
+                        Knight</h1>
+                    <h2 class="font-light uppercase tracking-[0.5px] text-[15px] text-white">NEW EPISODES NOW STREAMING
+                        ON NETFLIX</h2>
+                    <div
+                        class="text-g2 inline-block text-white text-[12px] text-center w-[180px] font-semibold tracking-[0.5px] border border-white px-[15px] py-[10px] bg-transparent mt-4">
+                        VISIT SITE</div>
+                </div>
+
+            </div>
+            <div class="flex justify-start bg-[#04235f]">
+                <div class="s2">
+                    <!-- img -->
+                </div>
+                <div class="w-[720px] h-[432px] flex flex-col justify-end pt-[30px] pr-[30px] pl-[30px] pb-[20px]">
+                    <h1 class="font-bold uppercase tracking-[0.5px] text-[21px] text-white">Gabby's Dollhouse</h1>
+                    <h2 class="font-light uppercase tracking-[0.5px] text-[15px] text-white">NEW SEASON NOW PLAYING ON
+                        NETFLIX</h2>
+                    <div
+                        class="text-g2 inline-block text-white text-[12px] text-center w-[180px] font-semibold tracking-[0.5px] border border-white px-[15px] py-[10px] bg-transparent mt-4">
+                        VISIT SITE</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- end-under-header -->
+
+        <!-- content-section -->
+
+        <div class="w-full h-auto ">
+            <div class="max-w-[1440px] h-auto mx-auto py-[10px] px-[20px] text-white">
+                <div class="h-[87px] flex justify-between items-center pb-[10px] pt-[40px] ">
+                    <h1 class="font-['Montserrat'] uppercase text-[#052c6f] text-[23px]">Library</h1>
+                    <div class="search-box relative">
+                        <input
+                            class="font-['Montserrat'] font-[15px] border-b border-b-blue-700 text-[#052c6f] placeholder:text-[#9eaac6] pr-[45px] pb-[5px] pt-[7px]"
+                            type="text" placeholder="SEARCH SHOWS">
+                        <i class="fa fa-search absolute right-0 top-1/2 -translate-y-1/2 text-blue-800 text-[14px]"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div>
+                    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/Jurassic world.jpg" alt="Jurassic world">
+                            <div class="info">
+                                <h3>JURASSIC WORLD</h3>
+                                <p>NEW SEASON NOW PLAYING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/gabby's dollhouse.jpg" alt="GABBY'S DOLLHOUSE">
+                            <div class="info">
+                                <h3>GABBY'S DOLLHOUSE</h3>
+                                <p>NEW SEASON NOW PLAYING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/The bad guys .jpg" alt="THE BAD GUYS: BREAKING IN">
+                            <div class="info">
+                                <h3>THE BAD GUYS: BREAKING IN</h3>
+                                <p>NOW PLAYING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/Mighty monster wheelies.jpg" alt="MIGHTY MONSTER WHEELIES">
+                            <div class="info">
+                                <h3>MIGHTY MONSTER WHEELIES</h3>
+                                <p>NOW PLAYING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/be@rbrick.jpg" alt="BE@RBRICK">
+                            <div class="info">
+                                <h3>BE@RBRICK</h3>
+                                <p>NEW SERIES NOW STREAMING ON APPLE TV +</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/curses.jpg" alt="CURSES!">
+                            <div class="info">
+                                <h3>CURSES!</h3>
+                                <p>NEW SEASON NOW STREAMING ON APPLE TV +</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/the bad guys 2.jpg" alt="THE BAD GUYS: HAUNTED HEIST">
+                            <div class="info">
+                                <h3>THE BAD GUYS: HAUNTED HEIST</h3>
+                                <p>NEW SPECIAL NOW PLAYING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/FRC_S2_Key Art_960x1458.jpg" alt="FRIGHT KREWE">
+                            <div class="info">
+                                <h3>FRIGHT KREWE</h3>
+                                <p>NOW STREAMING ON HULU AND PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/MM_S1_Key Art_960x1458.jpg" alt="MEGAMIND RULES">
+                            <div class="info">
+                                <h3>MEGAMIND RULES</h3>
+                                <p>NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/MEG_Movie_Key Art_960x1458.jpg" alt="MEGAMIND VS THE DOOM SYNDICATE">
+                            <div class="info">
+                                <h3>MEGAMIND VS THE DOOM SYNDICATE</h3>
+                                <p>NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/NQN_S2_Key Art_960x1458.jpg" alt="NOT QUITE NARWHAL">
+                            <div class="info">
+                                <h3>NOT QUITE NARWHAL</h3>
+                                <p>NEW EPISODES NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/DEW_S2_Key Art_960x1458.jpg" alt="DEW DROP DIARIES">
+                            <div class="info">
+                                <h3>DEW DROP DIARIES</h3>
+                                <p>NEW EPISODES NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/BAD_Holiday_Key Art_960x1458.jpg" alt="THE BAD GUYS: A VERY BAD HOLIDAY">
+                            <div class="info">
+                                <h3>THE BAD GUYS: A VERY BAD HOLIDAY</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/GDG_S4_Key Art_960x1458.jpg" alt="GO,DOG.GO!">
+                            <div class="info">
+                                <h3>GO,DOG.GO!</h3>
+                                <p>NEW EPISODES NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/NCR_S8_Key Art_960x1458.jpg" alt="THE CROODS: FAMILY TREE">
+                            <div class="info">
+                                <h3>THE CROODS: FAMILY TREE</h3>
+                                <p>NEW SEASON NOW STREAMING ON HULU & PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/NDR_S8_Key Art_960x1458.jpg" alt="DRAGONS: THE NINE REALMS">
+                            <div class="info">
+                                <h3>DRAGONS: THE NINE REALMS</h3>
+                                <p>NEW EPISODE NOW STREAMING ON HULU AND PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/KDK_S3_Key Art_960x1458.jpg" alt="KUNG FU PANDA: THE DRAGON KNIGHT">
+                            <div class="info">
+                                <h3>KUNG FU PANDA: THE DRAGON KNIGHT</h3>
+                                <p>NEW EPISODE NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/BOS(BITC)_S2_Key Art_960x1458v2.jpg" alt="THE BOSS BABY: BACK IN THE CRIB">
+                            <div class="info">
+                                <h3>THE BOSS BABY: BACK IN THE CRIB</h3>
+                                <p>NEW EPISODES NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/ABN_S2_Key-Art_960x1458.jpg" alt="ABOMINABLE AND THE INVISIBLE CITY">
+                            <div class="info">
+                                <h3>ABOMINABLE AND THE INVISIBLE CITY</h3>
+                                <p>NEW EPISODES NOW STREAMING ON HULU & PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/PNY2_Hero_Dreamworks_Vert_Thumbnail_960x1458.jpg" alt="PINECONE & PONY">
+                            <div class="info">
+                                <h3>PINECONE & PONY</h3>
+                                <p>NOW STREAMING ON APPLE TV +</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/YAR_S4_keyart_960x1458.jpg" alt="THE MIGHTY ONES">
+                            <div class="info">
+                                <h3>THE MIGHTY ONES</h3>
+                                <p>NEW EPISODES NOW STREAMING ON HULU & PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/JWCC_interactive_keyart_1350.jpg" alt="JURASSIC WORLD: CAMP CREATACEOUS">
+                            <div class="info">
+                                <h3>JURASSIC WORLD: CAMP CREATACEOUS</h3>
+                                <p>INTERACTIVE SPECIAL NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/DRR_S4_keyart_960.jpg" alt="RESCUE RIDERS: HEROES OF THE SKY">
+                            <div class="info">
+                                <h3>RESCUE RIDERS: HEROES OF THE SKY</h3>
+                                <p>NEW EPISODE NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/TRL_S7_keyart_1350.jpg" alt="TROLLS: TROLLSTOPIA">
+                            <div class="info">
+                                <h3>TROLLS: TROLLSTOPIA</h3>
+                                <p>NEW EPISODES NOW STREAMING ON HULU & PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/TZG_S2_keyart_1350.jpg" alt="Jurassic">
+                            <div class="info">
+                                <h3>TEAM ZENKO GO</h3>
+                                <p>NEW EPISODES NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/MAD_S7_keyart_960x1458.jpg" alt="MADAGASCAR: A LITTLE WILD">
+                            <div class="info">
+                                <h3>MADAGASCAR: A LITTLE WILD</h3>
+                                <p>NOW STREAMING ON HULU & PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/DOUG_s2B_keyart_960x1458.jpg" alt="DOUG UNPLUGS">
+                            <div class="info">
+                                <h3>DOUG UNPLUGS</h3>
+                                <p>NOW STREAMING ON APPLE TV +</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/FF_S6_keyart_960x1458.jpg" alt="FAST & FURIOUS: SPY RACERS">
+                            <div class="info">
+                                <h3>FAST & FURIOUS: SPY RACERS</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/ARCH_S4_keyart_960x1458.jpg" alt="ARCHIBALD'S NEXT BIG THING IS HERE!">
+                            <div class="info">
+                                <h3>ARCHIBALD'S NEXT BIG THING IS HERE!</h3>
+                                <p>NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/WAL_KeyArt_960x1458.jpg" alt="WHERE'S WALDO">
+                            <div class="info">
+                                <h3>WHERE'S WALDO</h3>
+                                <p>NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/RTT_Singalongs_Website_KeyArt_960x1458.jpg" alt="RHYME TIME TOWN">
+                            <div class="info">
+                                <h3>RHYME TIME TOWN</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/SPR_Interactive_Website_KeyArt_960x1458.jpg" alt="SPIRIT RIDING FREE">
+                            <div class="info">
+                                <h3>SPIRIT RIDING FREE</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/CAP_S1_Website_KeyArt_960x1458.jpg"
+                                alt="THE EPIC TALES OF CAPTIAN UNDERPANTS">
+                            <div class="info">
+                                <h3>THE EPIC TALES OF CAPTIAN UNDERPANTS</h3>
+                                <p>NOW STREAMING ON NETFLIX!</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/DRR_HH_Website_KeyArt_960x1458.jpg" alt="DRAGONS RESCUE RIDERS">
+                            <div class="info">
+                                <h3>DRAGONS RESCUE RIDERS</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/CLEO_S2_Website_KeyArt_960x1458.jpg" alt="CLEOPATRA IN SPACE">
+                            <div class="info">
+                                <h3>CLEOPATRA IN SPACE</h3>
+                                <p></p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/BB_GTB_Website_Key-Art_960x1458.jpg" alt="THE BOSS BABY: GET THAT BABY!">
+                            <div class="info">
+                                <h3>THE BOSS BABY: GET THAT BABY!</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/httyd-tv-special-poster.jpg" alt="HOW TO TRAIN YOUR DRAGON HOMECOMING">
+                            <div class="info">
+                                <h3>HOW TO TRAIN YOUR DRAGON HOMECOMING</h3>
+                                <p>NOW ON DVD & DIGITAL</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/SHE_S5_KeyArt_Vert_960x1458.jpg" alt="SHE-RA AND THE PRNCESSES OF POWER">
+                            <div class="info">
+                                <h3>SHE-RA AND THE PRNCESSES OF POWER</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/trolls-the-beat-goes-on-poster-1.jpg" alt="TROLLS: THE BEAT GOES ON!">
+                            <div class="info">
+                                <h3>TROLLS: THE BEAT GOES ON!</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/the-adventures-of-rocky-and-bullwinkle-poster-1.jpg"
+                                alt="THE ADVENTURES OF ROCKY AND BULLWINKLE">
+                            <div class="info">
+                                <h3>THE ADVENTURES OF ROCKY AND BULLWINKLE</h3>
+                                <p>NOW STREAMING ON AMAZON</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/trollhunters-poster-1.jpg" alt="TROLLHUNTERS">
+                            <div class="info">
+                                <h3>TROLLHUNTERS</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/noddy-toyland-detective-poster-1.jpg" alt="NODDY TOYLAND DETETIVE">
+                            <div class="info">
+                                <h3>NODDY TOYLAND DETETIVE</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/dawn-of-the-croods-poster-1.jpg" alt="DAWN OF THE CROODS">
+                            <div class="info">
+                                <h3>DAWN OF THE CROODS</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/dragons-race-to-the-edge-poster-1.jpg" alt="DRAGON: RACK TO THE EDGE">
+                            <div class="info">
+                                <h3>DRAGON: RACK TO THE EDGE</h3>
+                                <p>NOW STREAMING ON NETFLIX</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/the-adventures-of-puss-in-boots-poster-1.jpg"
+                                alt="THE ADVENTURES OF PUSS IN BOOTS">
+                            <div class="info">
+                                <h3>THE ADVENTURES OF PUSS IN BOOTS</h3>
+                                <p>NOW STREAMING ON PEACOCK</p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/all-hail-king-julien-poster-1.jpg" alt="ALL HAIL KING JULIEN">
+                            <div class="info">
+                                <h3>ALL HAIL KING JULIEN</h3>
+                                <p></p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/veggie-tales-in-the-house-poster-1.jpg" alt="VEGGIE TALES IN THE HOUSE">
+                            <div class="info">
+                                <h3>VEGGIE TALES IN THE HOUSE</h3>
+                                <p></p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="imageN group relative overflow-hidden cursor-pointer">
+                            <img src="img1/turbo-fast-poster-1.jpg" alt="TURBO FAST">
+                            <div class="info">
+                                <h3>TURBO FAST</h3>
+                                <p></p>
+                            </div>
+                            <a href="#">
+                                <div class="content">
+                                    <h1>See More</h1>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- end-content-section -->
+
+        <!-- section & img -->
+        <div class="section-contact">
+            <div class="contact-form">
+                <h2>STAY IN TOUCH</h2>
+                <p>Register today for the DreamWorks Animation newsletter to receive <br>all the latest information
+                    about our upcoming films and projects.</p>
+                <form class="form-intouch">
+                    <h2>ENTER BIRTH DATE</h2>
+                    <div class="input-day-month-year">
+                        <label class="day">
+                            <div class="label">
+                                MONTH
+                            </div>
+                            <input type="text">
+                        </label>
+                        <label class="day">
+                            <div class="label">
+                                DAY
+                            </div>
+                            <input type="text">
+                        </label>
+
+                        <label class="day">
+                            <div class="label">
+                                YEAR
+                            </div>
+                            <input type="text">
+                        </label>
+                    </div>
+                </form>
+                <!-- Button Form -->
+                <button class="contact-btn">
+                    NEXT
+                </button>
+            </div>
+
+            <div class="contact-img">
+                <img src="img1/3horses-3girls.jpg" alt="">
+            </div>
+        </div>
+        </div>
+
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <div class="logo-circle">
+                    <img src="/img/footer/image copy 7.png" alt="" />
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#home">HOME</a>
+                <a href="#movies">MOVIES</a>
+                <a href="#tv-shows">TV SHOWS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#careers">CAREERS</a>
+                <a href="#culture">CULTURE</a>
+                <a href="#classics">CLASSICS</a>
+            </nav>
+
+            <div class="social-section">
+                <div class="social-title">FOLLOW DREAMWORKS</div>
+                <div class="social-icons">
+                    <!-- twitter-icon -->
+                    <div class="social-icon x-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </div>
+
+                    <!-- facebook-icon -->
+                    <div class="social-icon fb-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </div>
+
+                    <!-- youtube-icon -->
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </div>
+
+                    <!-- Instragram-icon -->
+                    <div class="social-icon">
+                        <img src="/img/footer/[CITYPNG.COM]HD White Outline Round Instagram Logo Icon PNG - 2000x2000.png"
+                            alt="" />
+                    </div>
+                    <!-- tiktok-icon -->
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <span>&copy; 2025 DREAMWORKS ANIMATION ALL RIGHTS RESERVED.</span>
+                    <span>A DIVISION OF</span>
+                    <a href="#">NBCUNIVERSAL. </a>
+                    <a href="#">PRIVACY POLICY</a>
+                    <span>|</span>
+                    <a href="#">COOKIE NOTICE</a>
+                    <span>|</span>
+                    <a href="#">TERMS OF SERVICE</a>
+                    <span>|</span>
+                    <a href="#">YOUTUBE TERMS OF SERVICE</a>
+                    <span>|</span>
+                    <a href="#">GOOGLE PRIVACY POLICY</a>
+                </div>
+                <div class="language-selector">
+                    <div class="lang-btn">
+                        <img src="../../img/footer/image copy 6.png" alt="" />
+                    </div>
+                    <div class="lang-btn">
+                        <img src="../../img/footer/image copy 5.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/src/javascript/slide_head.js"></script>
+    <script src="/src/javascript/slide.js"></script>
+    <script src="/src/javascript/menu.js"></script>
+    <script src="/src/javascript/about.js"></script>
+</body>
+
+</html>
