@@ -1,7 +1,171 @@
-/* .container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
-} */
+/* =====================================
+   GLOBAL SAFETY
+===================================== */
+html, body {
+  overflow-x: hidden;
+}
 
+/* =====================================
+   HEADER + HERO
+===================================== */
 
+/* Let hero adapt on small screens */
+@media (max-width: 1024px) {
+  .header,
+  .slide {
+    height: auto !important;
+  }
+
+  .slide video {
+    height: 100vh;
+  }
+
+  .slide .absolute {
+    left: 5rem !important;
+    top: auto !important;
+    bottom: 6rem !important;
+    width: 80% !important;
+  }
+
+  .slide h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .slide .absolute {
+    left: 1rem !important;
+    bottom: 4rem !important;
+    width: 90% !important;
+  }
+
+  .slide h2 {
+    font-size: 2rem;
+  }
+
+  .slide p {
+    width: 100% !important;
+  }
+}
+
+/* =====================================
+   UNDER HEADER (2 BIG IMAGES)
+===================================== */
+
+@media (max-width: 768px) {
+  .grid.md\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid .w-\[720px\] {
+    width: 100% !important;
+  }
+}
+
+/* =====================================
+   MAIN CONTENT CONTAINER
+===================================== */
+
+@media (max-width: 1440px) {
+  .w-\[1440px\] {
+    width: 100% !important;
+    max-width: 1280px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* =====================================
+   NEW TO HOME ENTERTAINMENT
+===================================== */
+
+@media (max-width: 1024px) {
+  ul.flex.flex-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  ul.flex.flex-wrap {
+    gap: 16px;
+  }
+
+  .imageN {
+    width: 100% !important;
+  }
+}
+
+/* =====================================
+   LIBRARY GRID
+===================================== */
+
+@media (max-width: 1280px) {
+  ul.flex.flex-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  ul.flex.flex-wrap {
+    gap: 16px;
+  }
+
+  ul.flex.flex-wrap figure {
+    width: 100% !important;
+  }
+}
+
+/* =====================================
+   CONTACT SECTION (VERY IMPORTANT)
+===================================== */
+
+@media (max-width: 1440px) {
+  .section-contact {
+    margin: 0 auto !important;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-contact {
+    flex-direction: column;
+    height: auto !important;
+    gap: 40px;
+  }
+
+  .contact-form,
+  .contact-img img {
+    width: 100% !important;
+  }
+
+  .contact-img {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .input-day-month-year {
+    flex-direction: column;
+  }
+
+  .day input {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
